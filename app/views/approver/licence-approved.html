@@ -1,0 +1,61 @@
+{% extends "layouts/cvl.html" %}
+
+{% set pageName="Home" %}
+
+{% set htmlClasses = 'app-width-wide' %}
+
+{% block header %}
+
+{% include "components/cvl-dm-header/include.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+    
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Licence approved
+          </h1>
+        </div>
+
+        <h2 class="govuk-heading-m">
+          What happens next
+            </h2>
+
+        <p>A case administrator can now print the licence for Guy Richards.
+          <br>We will email the probation practitioner automatically to tell them this licence has been approved. 
+        </p>
+
+        <h2 class="govuk-heading-m">
+          If changes are made
+            </h2>
+
+        <p>Probation practitioners can make changes up to 2 days before a standard release. After this, they can only ask the prison to change the initial appointment details. Other changes must be made after release. Probation practitioners can continue to work on licences for people being released early after the 2-day point.</p>
+        
+        <a href="case-list-app-needed">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Approve another licence
+        </button>
+      </a>
+
+        <p><a href="../../../_common/not-testing.html" class="govuk-link--no-visited-state">What did you think of this service?</a> (Takes 30 seconds - opens in a new tab)</p>
+
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "components/cvl-dm-ca-footer/include.html" %}
+
+{% endblock %}
