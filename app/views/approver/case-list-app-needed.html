@@ -74,13 +74,11 @@
               </p>
           </div>
 
-          {% if data['approved'] == 'true' %}  
-             <div class="govuk-grid-row">
+             <!-- <div class="govuk-grid-row">
                <div class="govuk-grid-column-three-quarters">
                   <h3 class="govuk-heading-s">There are no licences pending approval which match the search criteria.</h3>
               </div>
-             </div> 
-          {% else %}
+             </div>  -->
     <table class="govuk-table" data-module="moj-sortable-table">
 
     <thead class="govuk-table__head">
@@ -102,6 +100,8 @@
 
   <tbody class="govuk-table__body">
 
+    {% if data['approved'] != 'True' %}  
+
     <tr class="govuk-table__row">
 
       <td class="govuk-table__cell"><a href="approve-licence" class="govuk-link--no-visited-state">Guy Richards</a></td>
@@ -115,6 +115,9 @@
       <td class="govuk-table__cell"><span class="urgent-highlight">27 May 2025</span><span class="urgent-highlight urgent-highlight-message">HDC release</span></td>
 
        </tr>
+
+       {% endif %}  
+
 
        <tr class="govuk-table__row">
 
@@ -192,7 +195,6 @@
 
      </tbody>
     </table>
-  {% endif %}
 
 
 </div>
