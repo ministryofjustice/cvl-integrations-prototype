@@ -1,6 +1,6 @@
 {% extends "layouts/cvl.html" %}
 
-{% set pageName="Home" %}
+{% set pageName="Select someone to approve licences and supervision orders" %}
 
 {% set htmlClasses = 'app-width-wide' %}
 
@@ -68,13 +68,12 @@
                   <span class="govuk-body govuk-!-font-weight-bold">
                       Pentonville (HMP) 
                   </span>
-                  <a class="govuk-link govuk-!-margin-left-3 govuk-link--no-visited-state" href="#">
+                  <a class="govuk-link govuk-!-margin-left-3 govuk-link--no-visited-state" href="../../../_common/not-testing.html">
                       Licences for other establishments
                   </a>
               </p>
           </div>
 
-          {% if data['approved'] == 'True' %}  
 <table class="govuk-table" data-module="moj-sortable-table">
 
   <thead class="govuk-table__head">
@@ -86,15 +85,18 @@
 
       <th scope="col" class="govuk-table__header" aria-sort="none">Probation practitioner</th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="none">Submitted by</th>
-
       <th scope="col" class="govuk-table__header" aria-sort="none">Release date</th>
 
+      <th scope="col" class="govuk-table__header" aria-sort="none">Approved by</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="descending">Approved on</th>
 
     </tr>
   </thead>
 
   <tbody class="govuk-table__body">
+
+    {% if data['approved'] == 'true' %}  
 
     <tr class="govuk-table__row">
 
@@ -104,24 +106,109 @@
 
       <td class="govuk-table__cell"><a href="pp-page" class="govuk-link--no-visited-state">Sally Rooney</a></td>
 
-      <td class="govuk-table__cell">CVL COM</td>
-
       <td class="govuk-table__cell"><span class="urgent-highlight">27 May 2025</span><span class="urgent-highlight urgent-highlight-message">HDC release</span></td>
+
+      <td class="govuk-table__cell">John Cooper</td>
+
+      <td class="govuk-table__cell">11 Dec 2024</td>
+
+    </tr>
+
+    {% endif %}
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="../../../_common/not-testing.html" class="govuk-link--no-visited-state">Antonio Domingo</a></td>
+
+      <td class="govuk-table__cell">MMMNNN7</td>
+
+      <td class="govuk-table__cell"><a href="pp-page" class="govuk-link--no-visited-state">Sally Rooney</a></td>
+
+      <td class="govuk-table__cell">25 May 2025</td>
+
+      <td class="govuk-table__cell">John Cooper</td>
+
+      <td class="govuk-table__cell">11 Dec 2024</td>
 
     </tr>
 
 
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="../../../_common/not-testing.html" class="govuk-link--no-visited-state">Richard Watson</a></td>
+
+      <td class="govuk-table__cell">OOOPPP8</td>
+
+      <td class="govuk-table__cell"><a href="pp-page" class="govuk-link--no-visited-state">Sally Rooney</a></td>
+
+      <td class="govuk-table__cell">25 May 2025</td>
+
+      <td class="govuk-table__cell">John Cooper</td>
+
+      <td class="govuk-table__cell">10 Dec 2024</td>
+
+    </tr>
+
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="../../../_common/not-testing.html" class="govuk-link--no-visited-state">Mason Margolyes</a></td>
+
+      <td class="govuk-table__cell">QQQRRR9</td>
+
+      <td class="govuk-table__cell"><a href="pp-page" class="govuk-link--no-visited-state">Sally Rooney</a></td>
+
+      <td class="govuk-table__cell">24 May 2025</td>
+
+      <td class="govuk-table__cell">John Cooper</td>
+
+      <td class="govuk-table__cell">10 Dec 2024</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="../../../_common/not-testing.html" class="govuk-link--no-visited-state">Vikram Brin</a></td>
+
+      <td class="govuk-table__cell">SSSTTT10</td>
+
+      <td class="govuk-table__cell"><a href="../../../_common/not-testing.html" class="govuk-link--no-visited-state">Veronica Sawyer</a></td>
+
+      <td class="govuk-table__cell">24 May 2025</td>
+
+      <td class="govuk-table__cell">John Cooper</td>
+
+      <td class="govuk-table__cell">10 Dec 2024</td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell"><a href="../../../_common/not-testing.html" class="govuk-link--no-visited-state">Bob Bobbington</a></td>
+
+      <td class="govuk-table__cell">UUUVVV11</td>
+
+      <td class="govuk-table__cell"><a href="pp-page" class="govuk-link--no-visited-state">Sally Rooney</a></td>
+
+      <td class="govuk-table__cell">23 May 2025</td>
+
+      <td class="govuk-table__cell">John Cooper</td>
+
+      <td class="govuk-table__cell">9 Dec 2024</td>
+
+    </tr>
+
 
   </tbody>
 </table>
-{% else %}
- <div class="govuk-grid-row">
+
+
+
+<!-- <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
       <h3 class="govuk-heading-s">There are no licences pending approval which match the search criteria.</h3>
   </div>
-</div>
-{% endif %}
-
+</div> -->
 
 </div>
 </div>
