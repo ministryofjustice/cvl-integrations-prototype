@@ -5,7 +5,7 @@
 {% set htmlClasses = 'app-width-wide' %}
 
 {% block header %}
-{% include "components/cvl-dm-header/include.html" %}
+{% include "components/cvl-pp-header/include.html" %}
 {% endblock %}
 
 {%- block beforeContent -%}
@@ -22,7 +22,6 @@
 {% endblock %}
 
 {% block content %}
-
 
 
     <div class="govuk-grid-row">
@@ -42,12 +41,23 @@
                 
 <div id="approveLicenceCard" class="card card--clickable">
 <h2 class="govuk-heading-m card__heading">
-    <a class="govuk-link card__link govuk-link--no-visited-state" href="case-list-app-needed">Approve a licence</a>
+    <a class="govuk-link card__link govuk-link--no-visited-state" href="#">Create and edit a licence before a release date</a>
 </h2>
-<p class="govuk-body card__description">Approve licences for standard determinate releases and post sentence supervision orders.</p>
+<p class="govuk-body card__description">Create standard determinate licences and post sentence supervision orders for people in custody and send to prison for approval.</p>
 </div>
 
             </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+                
+              <div id="approveLicenceCard" class="card card--clickable">
+              <h2 class="govuk-heading-m card__heading">
+                  <a class="govuk-link card__link govuk-link--no-visited-state" href="#">View and vary a licence after a release date</a>
+              </h2>
+              <p class="govuk-body card__description">Find standard determinate licences and post sentence supervision orders for people on licence and send variation requests to the PDU head for approval.</p>
+              </div>
+              
+                          </div>
         
     </div>
 
