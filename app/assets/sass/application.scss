@@ -100,3 +100,46 @@
   background-position: 0 50%;
   padding-left: 25px;
 }
+
+// Horizontal row styling
+
+.border-style {
+  border: 0.25px solid #b1b4b6;
+}
+
+
+// Custom summary list
+
+
+@media (min-width: 40.0625em) {
+  .govuk-summary-list__key-custom, .govuk-summary-list__value-custom {
+      display: block;
+      width: 100%;
+  }
+}
+
+.govuk-summary-list__key-custom {
+  font-weight: 400;
+  padding-bottom: 0px!important;
+  margin-bottom: 0px;
+}
+
+.govuk-summary-list__value-custom {
+  font-weight: 700;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+
+// Custom grid
+
+.govuk-grid-column-twenty {
+   width: 20%;
+   float: left;
+   overflow-wrap: break-word;
+}
+
+.govuk-grid-column-forty {
+  width: 40%;
+  float: left;
+}
