@@ -1,6 +1,6 @@
 {% extends "layouts/cvl.html" %}
 
-{% set pageName="Are you sure you want to create licence?" %}
+{% set pageName="Are you sure you want to create this licence?" %}
 
 {% set htmlClasses = 'app-width-wide' %}
 
@@ -32,36 +32,35 @@
 
 
 
+    <form action="/are-you-sure-answer" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Are you sure you want to create licence?
+                Are you sure you want to create this licence?
               </h1>
             </legend>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                <input class="govuk-radios__input" id="createLicence" name="createLicence" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="createLicence">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                <input class="govuk-radios__input" id="createLicence-2" name="createLicence" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="createLicence-2">
                   No
                 </label>
               </div>
             </div>
           </fieldset>
         </div>
-        <a href="#">
           <button type="submit" class="govuk-button" data-module="govuk-button">
            Continue
           </button>
-        </a>
-
+        </form>
   </div>
 </div>
 
