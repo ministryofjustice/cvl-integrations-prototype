@@ -1,0 +1,230 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{%- block beforeContent -%}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">
+      MVP2
+    </h1>
+
+    <p>We will work with our partner prison to select approximately 10 cases coming up for release to test our MVP2 flow.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          MVP2 case criteria
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <ul class="govuk-list govuk-list--bullet">
+         <li>Prisoner has already been approved for HDC, therefore a HDCAD already exists</li>
+         <li>It's well in advance of their CRD</li>
+         <li>Can have standard, additional or bespoke licence conditions</li>
+         <li>1 release address that can be CAS or residential - but address must be known</li>
+         <li>1 curfew per day</li>
+         <li>Can be standard curfew hours or different (COM will enter these)</li>
+         <li>Standard 1st night curfew of 3pm-7am</li>
+       </ul>
+       </div>
+    </details>
+
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "Initial HDC task list"
+          },
+          content: {
+            html: '
+            <h2 class="govuk-heading-m">
+              Case admin (CA)
+            </h2>
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/case-admin/task-list">Task list</a>
+              </li>
+            </ul>
+            '
+          }
+        },
+        {
+          heading: {
+            text: "Creation and approval journey"
+          },
+          content: {
+            html: '
+            
+    <h2 class="govuk-heading-m">
+      Probation Practitioner (PP)
+    </h2>
+
+    <h3 class="govuk-heading-s">
+      Add reporting instructions
+    </h3>
+
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/are-you-sure">Are you sure you want to create this licence?</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/who-with">Who is the initial appointment with?</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/where-appt">Where is the initial appointment?</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/contact-number">What is the contact phone number for the initial appointment?</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/when-appt">When does this person need to go to the initial appointment?</a>
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s">
+      Add curfew hours
+    </h3>
+
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/standard-hours">Do you want to use the standard HDC curfew hours?</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/same-each-day">Do the same HDC curfew hours apply every day?</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/enter-curfew-same">Enter the curfew hours (same time each day)</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/enter-curfew-diff">Enter the curfew hours (different time each day)</a>
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s">
+      Add conditions
+    </h3>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/additional-conditions">Do they need additional licence conditions?</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/enter-additional-conditions">Select additional licence conditions</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/bespoke-conditions">Do they need bespoke licence conditions?</a>
+      </li>
+      <li>
+        <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/create-bespoke-condition">Create a bespoke condition</a>
+      </li>
+    </ul>
+
+    <h3 class="govuk-heading-s">
+      Check and confirm
+    </h3>
+
+    <ul class="govuk-list">
+
+    <li>
+      <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/check-licence">Check licence details</a>
+    </li>
+    <li>
+      <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/confirmation">Confirmation</a>
+    </li>
+    <li>
+      <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/create/case-list">Case list (status - submitted)</a>
+    </li>
+  </ul>
+    
+  <h2 class="govuk-heading-m">
+    Approver (DM)
+  </h2>
+
+  <ul class="govuk-list">
+    <li>
+      <a class="govuk-link--no-visited-state" href="/mvp2/approver/cvl-home">CVL home (DM version)</a>
+    </li>
+    <li>
+      <a class="govuk-link--no-visited-state" href="/mvp2/approver/case-list-app-needed">Case list (approval needed)</a>
+    </li>
+    <li>
+      <a class="govuk-link--no-visited-state" href="/mvp2/approver/approve-licence">Approve licence</a>
+    </li>
+    <li>
+      <a class="govuk-link--no-visited-state" href="/mvp2/approver/licence-approved">Licence approved</a>
+    </li>
+    <li>
+      <a class="govuk-link--no-visited-state" href="/mvp2/approver/case-list-rec-approved">Case list (recently approved)</a>
+    </li>
+  </ul>
+      '
+          }
+        },
+        {
+          heading: {
+            text: "View or edit before release"
+          },
+          content: {
+            html: '
+            <h2 class="govuk-heading-m">
+              Case admin (CA)
+            </h2>
+
+            <h3 class="govuk-heading-s">
+              Print licence (licence has been approved)
+            </h3>
+        
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/case-admin/case-list-pip-approved">Case list - people in prison</a>
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/case-admin/print-licence">Print licence</a>
+              </li>
+              <!-- <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/case-admin/case-list-pop-active">Case list - people on probation</a>
+              </li> -->
+            </ul>
+
+            <h2 class="govuk-heading-m">
+              Probation Practitioner (PP)
+            </h2>
+            
+            <h3 class="govuk-heading-s">
+              Edit approved licence
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/edit/case-list">Case list - case approved</a>
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/probation-practitioner/pre-release/edit/check-licence">Check licence details</a>
+              </li>
+            </ul>
+
+            
+            '
+          }
+        }
+
+      ]
+    }) }}
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}

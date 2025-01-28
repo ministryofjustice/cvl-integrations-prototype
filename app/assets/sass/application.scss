@@ -143,3 +143,31 @@
   width: 40%;
   float: left;
 }
+
+
+// Bold
+.bold {
+  font-weight: bold;
+}
+
+
+// Curfew hours input 
+
+.curfew-group {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 40.0625em) {
+  .curfew-group {
+    margin-bottom: 15px;
+    margin-right: -15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+}
+
+.extra-padding-curfew {
+    padding-right: 25px;
+  }

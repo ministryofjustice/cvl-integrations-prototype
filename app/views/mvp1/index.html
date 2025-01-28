@@ -2,6 +2,10 @@
 
 {% set pageName="Home" %}
 
+{%- block beforeContent -%}
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -11,6 +15,27 @@
     <h1 class="govuk-heading-xl">
       MVP1
     </h1>
+
+    <p>We are working with a prison to select 1 appropriate case coming up for release to test our MVP1 flow.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          MVP1 case criteria
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <ul class="govuk-list govuk-list--bullet">
+         <li>Prisoner has already been approved for HDC, therefore a HDCAD already exists</li>
+         <li>It's well in advance of their CRD</li>
+         <li>Standard conditions only</li>
+         <li>1 residential release address - no CAS</li>
+         <li>1 curfew per day</li>
+         <li>Standard curfew of 7pm-7am</li>
+         <li>Standard 1st night curfew of 3pm-7am</li>
+       </ul>
+       </div>
+    </details>
 
     <h2 class="govuk-heading-m">
       Approver (DM) 
@@ -104,7 +129,7 @@
       Case Admin (CA) 
     </h2>
     <h3 class="govuk-heading-s">
-      HDC changes
+      HDC
     </h3>
 
     <ul class="govuk-list">
