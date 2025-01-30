@@ -35,12 +35,12 @@
         </h1>
 
         <div class="govuk-button-group">
-          <a href="#">
+          <a href="are-you-sure">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Edit licence
           </button>
         </a>
-        <a href="#">
+        <a href="../../../../_common/not-testing.html">
           <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             View and print licence PDF
           </button>
@@ -90,7 +90,7 @@
               Date
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">07700 900457</p>
+              {{ data['date'] or "21 Feb 2025"}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
@@ -105,7 +105,7 @@
               Time
             </dt>
             <dd class="govuk-summary-list__value">
-              <p class="govuk-body">2pm</p>
+              2pm
             </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
@@ -138,6 +138,7 @@
               3pm to 7am
             </dd>
           </div>
+          {% if data['standardCurfew'] == 'yes' %}  
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Curfew hours
@@ -145,29 +146,105 @@
             <dd class="govuk-summary-list__value">
               Monday to Sunday<br>7pm to 7am
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
-                </li>
-              </ul>
+          </div>
+        </dl>
+        {% elif data['sameEachDay'] == 'yes' %}  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Curfew hours
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monday to Sunday<br>
+            {{ data['start-time-hour'] or '7' }}:{{ data['start-time-minute'] or '30' }}{{ data['start-time-ampm'] or 'pm' }} to {{ data['end-time-hour'] or '7' }}:{{ data['end-time-minute'] or '30' }}{{ data['end-time-ampm'] or 'pm' }}
+          </dd>
+        </div>
+      </dl>
+
+      {% elif data['sameEachDay'] == 'no' %}  
+    </dl>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+      Curfew hours
+        </h3>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Monday
+            </dt>
+            <dd class="govuk-summary-list__value">
+              9pm to 6am
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Tuesday
+            </dt>
+            <dd class="govuk-summary-list__value">
+              9pm to 6am
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Wednesday
+            </dt>
+            <dd class="govuk-summary-list__value">
+              9pm to 6am
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Thursday
+            </dt>
+            <dd class="govuk-summary-list__value">
+              9pm to 6am
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Friday
+            </dt>
+            <dd class="govuk-summary-list__value">
+              9pm to 6am
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Saturday
+            </dt>
+            <dd class="govuk-summary-list__value">
+              7pm to 7am
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Sunday
+            </dt>
+            <dd class="govuk-summary-list__value">
+              7pm to 7am
             </dd>
           </div>
         </dl>
 
+        
+        {% endif %}  
 
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How do I change the HDC first night curfew hours and address?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Email createandvaryalicence@digital.justice.gov.uk to request a change to first night curfew hours and address.
+          </div>
+        </details>
 
-        <div class="govuk-!-margin-bottom-9">
-          <h2 class="govuk-heading-m" style="display: inline;">
+        <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-8">
+          <h2 class="govuk-heading-m">
             Additional licence conditions (2)
               </h2>
 
-              
-              <a href="../../../_common/not-testing.html">
-                <button type="submit" style="float: right;" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                  Add or remove conditions
-                </button>
-              </a>
 
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
@@ -176,13 +253,6 @@
                   </dt>
                   <dd class="govuk-summary-list__value">
                     Condition 1 value
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <ul class="govuk-summary-list__actions-list">
-                      <li class="govuk-summary-list__actions-list-item">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> ?</span></a>
-                      </li>
-                    </ul>
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -192,13 +262,6 @@
                   <dd class="govuk-summary-list__value">
                     Condition 2 value
                   </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <ul class="govuk-summary-list__actions-list">
-                      <li class="govuk-summary-list__actions-list-item">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> ?</span></a>
-                      </li>
-                    </ul>
-                  </dd>
                 </div>
               </dl>
         </div>
@@ -206,16 +269,11 @@
 
 
         <div class="govuk-!-margin-bottom-9">
-          <h2 class="govuk-heading-m" style="display: inline;">
+          <h2 class="govuk-heading-m">
             Bespoke licence conditions (1)
               </h2>
 
-              
-              <a href="../../../_common/not-testing.html">
-                <button type="submit" style="float: right;" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                  Add or remove conditions
-                </button>
-              </a>
+
 
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
@@ -224,13 +282,6 @@
                   </dt>
                   <dd class="govuk-summary-list__value">
                     Condition 1 value
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <ul class="govuk-summary-list__actions-list">
-                      <li class="govuk-summary-list__actions-list-item">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> ?</span></a>
-                      </li>
-                    </ul>
                   </dd>
                 </div>
               </dl>
@@ -243,17 +294,13 @@
 
 
         <div class="govuk-button-group">
-          <a href="#">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
+          <a href="are-you-sure" type="submit" class="govuk-button" data-module="govuk-button">
             Edit licence
-          </button>
         </a>
-        <a href="#">
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <a href="../../../../_common/not-testing" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             View and print licence PDF
-          </button>
         </a>
-        <a class="govuk-link govuk-!-font-size-19 govuk-link--no-visited-state" href="../../../../_common/not-testing.html">
+        <a class="govuk-link govuk-!-font-size-19 govuk-link--no-visited-state" href="case-list">
             Return to caselist
         </a>
         </div>

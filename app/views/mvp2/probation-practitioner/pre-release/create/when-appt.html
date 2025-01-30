@@ -31,6 +31,8 @@
   <div class="govuk-grid-column-two-thirds">
 
 
+    <form action="standard-hours" method="get">
+
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
@@ -49,7 +51,7 @@
             For example, 17/5/2024
           </div>
       
-          <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+          <input class="govuk-input moj-js-datepicker-input" id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
       
         </div>
       
@@ -61,7 +63,7 @@
         </label>
     
       
-      <div id="time-hint" class="govuk-hint ">
+      <div id="time-hint" class="govuk-hint">
         For example, 9:30am or 2:55pm
     </div>
 
@@ -71,7 +73,7 @@
               <label class="govuk-label govuk-date-input__label" for="time-hour">
                   Hour
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="time-hour" name="time[hour]" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="time-hour" name="time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
           </div>
       </div>
       <div class="govuk-date-input__item">
@@ -79,7 +81,7 @@
               <label class="govuk-label govuk-date-input__label" for="time-minute">
                   Minute
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="time-minute" name="time[minute]" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="time-minute" name="time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
           </div>
       </div>
       <div class="govuk-date-input__item">
@@ -87,7 +89,7 @@
               <label class="govuk-label govuk-date-input__label" for="time-ampm">
                   am or pm
               </label>
-              <select class="govuk-select govuk-date-input__input govuk-input--width-2 " id="time-ampm" name="time[ampm]">
+              <select class="govuk-select govuk-date-input__input govuk-input--width-2 " id="time-ampm" name="time-ampm">
                   <option value="">
                       -
                   </option>
@@ -109,17 +111,14 @@
 
 
         <div class="govuk-button-group">
-          <a href="additional-conditions">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Continue
           </button>
-        </a>
-        <a href="additional-conditions">
           <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Skip this for now
           </button>
-        </a>
         </div>
+        </form>
 
   </div>
 </div>

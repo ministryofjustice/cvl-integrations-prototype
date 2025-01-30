@@ -44,7 +44,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['whoApptWith'] or "Seb Stevens" }}
+              Seb Stevens
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -55,7 +55,7 @@
               Address
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['addressLine1'] or "123 Fake St" }}, {{ data['addressTown'] or "Fakerton" }}, {{ data['addressPostcode'] or "FA1 1KE" }}
+              123 Fake St, Fakerton, FA1 1KE
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
@@ -66,7 +66,7 @@
               Contact phone number
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['contactNumber'] or "01234567890" }}
+              01234567890
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> contact phone number</span></a>
@@ -77,12 +77,8 @@
               Date
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['date'] %} 
-              {{ data['date'] | formatDateString("D/M/YYYY","D MMMM YYYY")}}
-              {% else %} 
-              25 February 2025
-              {% endif %} 
-             </dd>
+              {{ data['date'] or "21 Feb 2025"}}
+            </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
@@ -96,12 +92,7 @@
               Time
             </dt>
             <dd class="govuk-summary-list__value">
-
-              {% if data['time-minute'] == "0" or "00" or "" %} 
-                {{ data['time-hour'] or '1' }}{{ data['time-ampm'] or 'pm' }} 
-              {% else %} 
-                {{ data['time-hour'] or '1' }}:{{ data['time-minute'] or '30' }}{{ data['time-ampm'] or 'pm' }} 
-              {% endif %} 
+              2pm
             </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
@@ -293,12 +284,13 @@
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
               How do I change the HDC first night curfew hours and address?
-             </span>
+            </span>
           </summary>
           <div class="govuk-details__text">
-            Email createandvaryalicence@digital.justice.gov.uk to request a change to first night curfew hours and address.          
+            Email createandvaryalicence@digital.justice.gov.uk to request a change to first night curfew hours and address.
           </div>
         </details>
+
 
 
         <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-8">
@@ -364,7 +356,7 @@
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Bespoke condition
+                    Condition 1 key
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{ data['bespokeDetail'] or "Bespoke condition value" }}
@@ -380,14 +372,23 @@
               </dl>
         </div>
 
-            <div class="govuk-button-group">
-              <a href="confirmation" type="submit" class="govuk-button" data-module="govuk-button">
-                Send to prison for approval
-            </a>
-            <a class="govuk-link govuk-!-font-size-19 govuk-link--no-visited-state" href="case-list">
-                Return to caselist
-            </a>
-            </div>
+
+
+
+
+
+
+        <div class="govuk-button-group">
+          <a href="confirmation" type="submit" class="govuk-button" data-module="govuk-button">
+           Send to prison for approval
+        </a>
+        <a class="govuk-link govuk-!-font-size-19 govuk-link--no-visited-state" href="../../../../_common/not-testing.html">
+            Return to caselist
+        </a>
+        </div>
+
+
+
 
   </div>
 </div>
