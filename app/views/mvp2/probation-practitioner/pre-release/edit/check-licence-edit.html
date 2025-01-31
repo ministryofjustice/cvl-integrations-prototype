@@ -38,71 +38,80 @@
           Initial appointment details
             </h2>
     
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Seb Stevens
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              123 Fake St, Fakerton, FA1 1KE
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Contact phone number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              01234567890
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> contact phone number</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['date'] or "21 Feb 2025"}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> date</span></a>
-                </li>
-              </ul>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Time
-            </dt>
-            <dd class="govuk-summary-list__value">
-              2pm
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> time</span></a>
-                </li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
+    
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['whoApptWith'] or "Seb Stevens" }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['addressLine1'] or "123 Fake St" }},
+                  {% if data['addressLine2'] %}{{ data['addressLine2'] | default('Fake on Fake') }},{% endif %} 
+                  {{ data['addressTown'] or "Fakerton" }}, 
+                  {% if data['addressCounty'] %}{{ data['addressCounty'] | default('Fakeshire') }},{% endif %} 
+                  {{ data['addressPostcode'] or "FA1 1KE" }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Contact phone number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['contactNumber'] or "01234567890" }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> contact phone number</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['date'] %} 
+                  {{ data['date'] | formatDateString("D/M/YYYY","D MMMM YYYY")}}
+                  {% else %} 
+                  25 February 2025
+                  {% endif %} 
+                 </dd>
+                <dd class="govuk-summary-list__actions">
+                  <ul class="govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> date</span></a>
+                    </li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Time
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data | formatTime('1', '', 'pm') }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <ul class="govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> time</span></a>
+                    </li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
 
 
         <h2 class="govuk-heading-m">
@@ -125,32 +134,14 @@
               3pm to 7am
             </dd>
           </div>
-
-          {% if data['standardCurfew'] == 'yes' %}  
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Curfew hours
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Monday to Sunday<br>7pm to 7am
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
-                </li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
-        {% elif data['sameEachDay'] == 'yes' %}  
+        {% if data['sameEachDay'] == 'yes' %}  
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Curfew hours
           </dt>
           <dd class="govuk-summary-list__value">
             Monday to Sunday<br>
-            {{ data['start-time-hour'] or '7' }}:{{ data['start-time-minute'] or '30' }}{{ data['start-time-ampm'] or 'pm' }} to {{ data['end-time-hour'] or '7' }}:{{ data['end-time-minute'] or '30' }}{{ data['end-time-ampm'] or 'pm' }}
+            {{ data['start-time-hour'] or '7' }}{% if data['start-time-minute'] not in ['0', '00', ''] and data['start-time-minute'] is not undefined %}{{ ':' ~ data['start-time-minute'] }}{% endif %}{{ data['start-time-ampm'] or 'pm' }} to {{ data['end-time-hour'] or '7' }}{% if data['end-time-minute'] not in ['0', '00', ''] and data['end-time-minute'] is not undefined %}{{ ':' ~ data['end-time-minute'] }}{% endif %}{{ data['end-time-ampm'] or 'pm' }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
@@ -175,7 +166,7 @@
               Monday
             </dt>
             <dd class="govuk-summary-list__value">
-              9pm to 6am
+              {{ data['monday-start-time-hour'] or '9' }}{% if data['monday-start-time-minute'] not in ['0', '00', ''] and data['monday-start-time-minute'] is not undefined %}{{ ':' ~ data['monday-start-time-minute'] }}{% endif %}{{ data['monday-start-time-ampm'] or 'pm' }} to {{ data['monday-end-time-hour'] or '6' }}{% if data['monday-end-time-minute'] not in ['0', '00', ''] and data['monday-end-time-minute'] is not undefined %}{{ ':' ~ data['monday-end-time-minute'] }}{% endif %}{{ data['monday-end-time-ampm'] or 'am' }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
@@ -190,7 +181,7 @@
               Tuesday
             </dt>
             <dd class="govuk-summary-list__value">
-              9pm to 6am
+              {{ data['tuesday-start-time-hour'] or '9' }}{% if data['tuesday-start-time-minute'] not in ['0', '00', ''] and data['tuesday-start-time-minute'] is not undefined %}{{ ':' ~ data['tuesday-start-time-minute'] }}{% endif %}{{ data['tuesday-start-time-ampm'] or 'pm' }} to {{ data['tuesday-end-time-hour'] or '6' }}{% if data['tuesday-end-time-minute'] not in ['0', '00', ''] and data['tuesday-end-time-minute'] is not undefined %}{{ ':' ~ data['tuesday-end-time-minute'] }}{% endif %}{{ data['tuesday-end-time-ampm'] or 'am' }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
@@ -205,7 +196,7 @@
               Wednesday
             </dt>
             <dd class="govuk-summary-list__value">
-              9pm to 6am
+              {{ data['wednesday-start-time-hour'] or '9' }}{% if data['wednesday-start-time-minute'] not in ['0', '00', ''] and data['wednesday-start-time-minute'] is not undefined %}{{ ':' ~ data['wednesday-start-time-minute'] }}{% endif %}{{ data['wednesday-start-time-ampm'] or 'pm' }} to {{ data['wednesday-end-time-hour'] or '6' }}{% if data['wednesday-end-time-minute'] not in ['0', '00', ''] and data['wednesday-end-time-minute'] is not undefined %}{{ ':' ~ data['wednesday-end-time-minute'] }}{% endif %}{{ data['wednesday-end-time-ampm'] or 'am' }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
@@ -220,7 +211,7 @@
               Thursday
             </dt>
             <dd class="govuk-summary-list__value">
-              9pm to 6am
+              {{ data['thursday-start-time-hour'] or '9' }}{% if data['thursday-start-time-minute'] not in ['0', '00', ''] and data['thursday-start-time-minute'] is not undefined %}{{ ':' ~ data['thursday-start-time-minute'] }}{% endif %}{{ data['thursday-start-time-ampm'] or 'pm' }} to {{ data['thursday-end-time-hour'] or '6' }}{% if data['thursday-end-time-minute'] not in ['0', '00', ''] and data['thursday-end-time-minute'] is not undefined %}{{ ':' ~ data['thursday-end-time-minute'] }}{% endif %}{{ data['thursday-end-time-ampm'] or 'am' }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
@@ -277,7 +268,23 @@
           </div>
         </dl>
 
-        
+        {% else %}  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Curfew hours
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monday to Sunday<br>7pm to 7am
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
         {% endif %}  
 
         <details class="govuk-details">

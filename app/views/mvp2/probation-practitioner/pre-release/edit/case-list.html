@@ -5,7 +5,7 @@
 {% set htmlClasses = 'app-width-wide' %}
 
 {% block header %}
-{% include "components/cvl-dm-header/include.html" %}
+{% include "components/cvl-pp-header/include.html" %}
 {% endblock %}
 
 {%- block beforeContent -%}
@@ -40,11 +40,11 @@
         
    
         <div class="govuk-form-group">
-          <h1 class="govuk-label-wrapper">
+          <h2 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--s" for="event-name">
               Find a case
             </label>
-          </h1>
+          </h2>
           <div id="event-name-hint" class="govuk-hint">
             Search by name, CRN or probation practitioner
           </div>

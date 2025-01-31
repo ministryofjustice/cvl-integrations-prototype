@@ -83,3 +83,30 @@ addFilter ('formatDateString', function(dateString, inputFormat, outputFormat){
     return moment(dateString, inputFormat).format(outputFormat)
   })
 
+
+
+
+  addFilter('formatTime', function(data, hourPlaceholder = '1', minutePlaceholder = '', ampmPlaceholder = 'pm') {
+    let hour = data['time-hour'] || hourPlaceholder;
+    let minute = data['time-minute'];
+    if (minute && !['0', '00', ''].includes(minute)) {
+      minute = ':' + minute;
+    } else {
+      minute = '';
+    }
+    let ampm = data['time-ampm'] || ampmPlaceholder;
+    return `${hour}${minute}${ampm}`;
+  });
+  
+  // Render the template with the data and filter
+  const data = {
+    'time-hour': '3',
+    'time-minute': '45',
+    'time-ampm': 'pm'
+  };
+  
+  // Example template using the custom filter
+  const template = '{{ data | formatTime("1", "", "pm") }}';
+
+
+  
