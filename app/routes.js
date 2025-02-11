@@ -175,7 +175,9 @@ router.post('/same-each-day-vary-answer', function(request, response) {
 
 
 
-// MVP2 - Feb 2025 testing - scenario 1
+// MVP2 - Feb 2025 testing
+
+// Flow 1
 
 
 router.post('/are-you-sure-answer3', function(request, response) {
@@ -249,8 +251,19 @@ router.post('/same-each-day-edit-answer2', function(request, response) {
     }
 })
 
+router.post('/standard-curfew-edit-answer2', function(request, response) {
 
-// Scenario 2 
+    var standard = request.session.data['standardCurfew']
+    if (standard == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-1/edit/check-licence-edit")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-1/edit/same-each-day")
+    }
+})
+
+
+
+// Flow 2 
 
 
 router.post('/are-you-sure-vary-answer2', function(request, response) {
@@ -288,7 +301,7 @@ router.post('/same-each-day-vary-answer2', function(request, response) {
 })
 
 
-// Scenario 3 
+// Flow 3 
 
 router.post('/are-you-sure-vary-answer3', function(request, response) {
 
