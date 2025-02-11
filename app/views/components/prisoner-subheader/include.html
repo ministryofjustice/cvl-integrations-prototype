@@ -1,10 +1,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full border-bottom">
         <div class="govuk-caption-m">
-            <span class="pipe-separated__item">CRN: Z503727</span>
-            <span class="pipe-separated__item">Release date: 21 Feb 2025</span>
-            <span class="pipe-separated__item">Date of birth: 5 Jan 1978</span>
+        {% if data['prisoner'] == 'diego' %}  
+            <span class="pipe-separated__item">CRN: S674889</span>
+            <span class="pipe-separated__item">Release date: 23 Feb 2025</span>
+            <span class="pipe-separated__item">Date of birth: 17 June 1999</span>
         </div>
-        <span class="govuk-heading-m">Guy Richards</span>
+        <span class="govuk-heading-m">Diego Rodriguez</span>
+        {% elif data['prisoner'] == 'montgomery' %}  
+        <span class="pipe-separated__item">CRN: F906211</span>
+        <span class="pipe-separated__item">Release date: 26 Feb 2025</span>
+        <span class="pipe-separated__item">Date of birth: 17 June 1966</span>
+    </div>
+    <span class="govuk-heading-m">Montgomery Talbot</span>
+        {% else %}  
+        <span class="pipe-separated__item">CRN: Z503727</span>
+        <span class="pipe-separated__item">Release date: 21 Feb 2025</span>
+        <span class="pipe-separated__item">Date of birth: 5 Jan 1978</span>
+    </div>
+    <span class="govuk-heading-m">Guy Richards</span>
+        {% endif %}  
     </div>
 </div>

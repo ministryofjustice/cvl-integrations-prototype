@@ -15,7 +15,7 @@
       BETA
     </strong>
     <span class="govuk-phase-banner__text">
-      This is a new service - your <a class="govuk-link govuk-link--no-visited-state" href="../../../../_common/not-testing.html">feedback</a> will help us to improve it.
+      This is a new service - your <a class="govuk-link govuk-link--no-visited-state" href="../../../../../_common/not-testing.html">feedback</a> will help us to improve it.
     </span>
   </p>
 </div>
@@ -47,7 +47,7 @@
               {{ data['whoApptWith'] or "Seb Stevens" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="../../../../../_common/not-testing.html">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -62,7 +62,7 @@
               {{ data['addressPostcode'] or "FA1 1KE" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="../../../../../_common/not-testing.html">Change<span class="govuk-visually-hidden"> address</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -73,7 +73,7 @@
               {{ data['contactNumber'] or "01234567890" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> contact phone number</span></a>
+              <a class="govuk-link govuk-link--no-visited-state" href="../../../../../_common/not-testing.html">Change<span class="govuk-visually-hidden"> contact phone number</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -90,7 +90,7 @@
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> date</span></a>
+                  <a class="govuk-link govuk-link--no-visited-state" href="../../../../../_common/not-testing.html">Change<span class="govuk-visually-hidden"> date</span></a>
                 </li>
               </ul>
             </dd>
@@ -105,7 +105,7 @@
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> time</span></a>
+                  <a class="govuk-link govuk-link--no-visited-state" href="../../../../../_common/not-testing.html">Change<span class="govuk-visually-hidden"> time</span></a>
                 </li>
               </ul>
             </dd>
@@ -134,12 +134,38 @@
             </dd>
           </div>
 
-          </dl>
+        {% if data['sameEachDay'] == 'yes' %}  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Curfew hours
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monday to Sunday<br>
+            {{ data['start-time-hour'] | int or '7' }}{% if data['start-time-minute'] not in ['0', '00', ''] and data['start-time-minute'] is not undefined %}{{ ':' ~ data['start-time-minute'] }}{% endif %}{{ data['start-time-ampm'] or 'pm' }} to {{ data['end-time-hour'] | int or '7' }}{% if data['end-time-minute'] not in ['0', '00', ''] and data['end-time-minute'] is not undefined %}{{ ':' ~ data['end-time-minute'] }}{% endif %}{{ data['end-time-ampm'] or 'pm' }}
+              </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link govuk-link--no-visited-state" href="standard-hours">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
 
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-      Curfew hours
-        </h3>
+      {% elif data['sameEachDay'] == 'no' %}  
+    </dl>
 
+    <div class="curfew-hour-wrapper">
+      <h3 class="curfew-hour__title">
+        Curfew hours
+      </h3>
+      <ul class="curfew-hour__actions">
+        <li class="curfew-hour__action">
+          <a class="govuk-link govuk-link--no-visited-state" href="standard-hours">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
+        </li>
+      </ul>
+    </div>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -147,13 +173,6 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['monday-start-time-hour'] or '9' }}{% if data['monday-start-time-minute'] not in ['0', '00', ''] and data['monday-start-time-minute'] is not undefined %}{{ ':' ~ data['monday-start-time-minute'] }}{% endif %}{{ data['monday-start-time-ampm'] or 'pm' }} to {{ data['monday-end-time-hour'] or '6' }}{% if data['monday-end-time-minute'] not in ['0', '00', ''] and data['monday-end-time-minute'] is not undefined %}{{ ':' ~ data['monday-end-time-minute'] }}{% endif %}{{ data['monday-end-time-ampm'] or 'am' }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="enter-curfew-diff#monday">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
-                </li>
-              </ul>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -163,13 +182,6 @@
             <dd class="govuk-summary-list__value">
               {{ data['tuesday-start-time-hour'] or '9' }}{% if data['tuesday-start-time-minute'] not in ['0', '00', ''] and data['tuesday-start-time-minute'] is not undefined %}{{ ':' ~ data['tuesday-start-time-minute'] }}{% endif %}{{ data['tuesday-start-time-ampm'] or 'pm' }} to {{ data['tuesday-end-time-hour'] or '6' }}{% if data['tuesday-end-time-minute'] not in ['0', '00', ''] and data['tuesday-end-time-minute'] is not undefined %}{{ ':' ~ data['tuesday-end-time-minute'] }}{% endif %}{{ data['tuesday-end-time-ampm'] or 'am' }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
-                </li>
-              </ul>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -177,13 +189,6 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['wednesday-start-time-hour'] or '9' }}{% if data['wednesday-start-time-minute'] not in ['0', '00', ''] and data['wednesday-start-time-minute'] is not undefined %}{{ ':' ~ data['wednesday-start-time-minute'] }}{% endif %}{{ data['wednesday-start-time-ampm'] or 'pm' }} to {{ data['wednesday-end-time-hour'] or '6' }}{% if data['wednesday-end-time-minute'] not in ['0', '00', ''] and data['wednesday-end-time-minute'] is not undefined %}{{ ':' ~ data['wednesday-end-time-minute'] }}{% endif %}{{ data['wednesday-end-time-ampm'] or 'am' }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
-                </li>
-              </ul>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -193,13 +198,6 @@
             <dd class="govuk-summary-list__value">
               {{ data['thursday-start-time-hour'] or '9' }}{% if data['thursday-start-time-minute'] not in ['0', '00', ''] and data['thursday-start-time-minute'] is not undefined %}{{ ':' ~ data['thursday-start-time-minute'] }}{% endif %}{{ data['thursday-start-time-ampm'] or 'pm' }} to {{ data['thursday-end-time-hour'] or '6' }}{% if data['thursday-end-time-minute'] not in ['0', '00', ''] and data['thursday-end-time-minute'] is not undefined %}{{ ':' ~ data['thursday-end-time-minute'] }}{% endif %}{{ data['thursday-end-time-ampm'] or 'am' }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
-                </li>
-              </ul>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -207,13 +205,6 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['friday-start-time-hour'] or '9' }}{% if data['friday-start-time-minute'] not in ['0', '00', ''] and data['friday-start-time-minute'] is not undefined %}{{ ':' ~ data['friday-start-time-minute'] }}{% endif %}{{ data['friday-start-time-ampm'] or 'pm' }} to {{ data['friday-end-time-hour'] or '6' }}{% if data['friday-end-time-minute'] not in ['0', '00', ''] and data['friday-end-time-minute'] is not undefined %}{{ ':' ~ data['friday-end-time-minute'] }}{% endif %}{{ data['friday-end-time-ampm'] or 'am' }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="enter-curfew-diff#friday">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
-                </li>
-              </ul>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -223,13 +214,6 @@
             <dd class="govuk-summary-list__value">
               {{ data['saturday-start-time-hour'] or '9' }}{% if data['saturday-start-time-minute'] not in ['0', '00', ''] and data['saturday-start-time-minute'] is not undefined %}{{ ':' ~ data['saturday-start-time-minute'] }}{% endif %}{{ data['saturday-start-time-ampm'] or 'pm' }} to {{ data['saturday-end-time-hour'] or '6' }}{% if data['saturday-end-time-minute'] not in ['0', '00', ''] and data['saturday-end-time-minute'] is not undefined %}{{ ':' ~ data['saturday-end-time-minute'] }}{% endif %}{{ data['saturday-end-time-ampm'] or 'am' }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
-                </li>
-              </ul>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -238,19 +222,29 @@
             <dd class="govuk-summary-list__value">
               {{ data['sunday-start-time-hour'] or '9' }}{% if data['sunday-start-time-minute'] not in ['0', '00', ''] and data['sunday-start-time-minute'] is not undefined %}{{ ':' ~ data['sunday-start-time-minute'] }}{% endif %}{{ data['sunday-start-time-ampm'] or 'pm' }} to {{ data['sunday-end-time-hour'] or '6' }}{% if data['sunday-end-time-minute'] not in ['0', '00', ''] and data['sunday-end-time-minute'] is not undefined %}{{ ':' ~ data['sunday-end-time-minute'] }}{% endif %}{{ data['sunday-end-time-ampm'] or 'am' }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
-                </li>
-              </ul>
-            </dd>
           </div>
         </dl>
 
+        {% else %}  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Curfew hours
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monday to Sunday<br>7pm to 7am
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link govuk-link--no-visited-state" href="same-each-day">Change<span class="govuk-visually-hidden"> curfew hours</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+        {% endif %}  
 
-
-        <details class="govuk-details">
+        <details class="govuk-details govuk-!-margin-bottom-6">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
               How do I change the HDC first night curfew hours and address?
@@ -262,9 +256,9 @@
         </details>
 
 
-        <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-8">
+        <div class="govuk-!-padding-top-4">
           <h2 class="govuk-heading-m" style="display: inline;">
-            Additional licence conditions (2)
+            Additional licence conditions (3)
               </h2>
 
               
@@ -277,10 +271,14 @@
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Condition 1 key
+                    Restriction of residency	
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Condition 1 value
+                    Not to reside (not even to stay for one night) in the same household as any child under the age of 18 without the prior approval of your supervising officer.
+                    <div class="govuk-!-font-weight-bold govuk-!-margin-top-3">
+                      <span class="govuk-!-display-block govuk-!-margin-top-2">any</span>
+                      <span class="govuk-!-display-block govuk-!-margin-top-2">18</span>
+                  </div>
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <ul class="govuk-summary-list__actions-list">
@@ -292,10 +290,32 @@
                 </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Condition 2 key
+                    Contact with a person	
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    Condition 2 value
+                    Not to have unsupervised contact with any children under the age of 18 without the prior approval of your supervising officer except where that contact is inadvertent and not reasonably avoidable in the course of lawful daily life.
+                    <div class="govuk-!-font-weight-bold govuk-!-margin-top-3">
+                      <span class="govuk-!-display-block govuk-!-margin-top-2">any</span>
+                      <span class="govuk-!-display-block govuk-!-margin-top-2">18</span>
+                  </div>
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <ul class="govuk-summary-list__actions-list">
+                      <li class="govuk-summary-list__actions-list-item">
+                        <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> ?</span></a>
+                      </li>
+                    </ul>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Programmes or activities	
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Not to undertake work or other organised activity which will involve a person under the age of 18, either on a paid or unpaid basis without the prior approval of your supervising officer.                    
+                    <div class="govuk-!-font-weight-bold govuk-!-margin-top-3">
+                      <span class="govuk-!-display-block govuk-!-margin-top-2">18</span>
+                  </div>
                   </dd>
                   <dd class="govuk-summary-list__actions">
                     <ul class="govuk-summary-list__actions-list">
@@ -310,35 +330,18 @@
 
 
 
-        <div class="govuk-!-margin-bottom-9">
+        <div class="govuk-!-padding-bottom-8 govuk-!-padding-top-6">
+
           <h2 class="govuk-heading-m" style="display: inline;">
-            Bespoke licence conditions (1)
+            Bespoke licence conditions (0)
               </h2>
 
               
               <a href="../../../_common/not-testing.html">
                 <button type="submit" style="float: right;" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                  Add or remove conditions
+                  Add conditions
                 </button>
               </a>
-
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Bespoke condition
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    {{ data['bespokeDetail'] or "Bespoke condition value" }}
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    <ul class="govuk-summary-list__actions-list">
-                      <li class="govuk-summary-list__actions-list-item">
-                        <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> ?</span></a>
-                      </li>
-                    </ul>
-                  </dd>
-                </div>
-              </dl>
         </div>
 
             <div class="govuk-button-group">

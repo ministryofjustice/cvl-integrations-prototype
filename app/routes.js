@@ -42,7 +42,7 @@ router.post('/bespoke-conditions-answer', function(request, response) {
 })
 
 
-// MVP2
+// MVP2 - general flow
 
 
 router.post('/are-you-sure-answer2', function(request, response) {
@@ -148,5 +148,165 @@ router.post('/address-type-answer', function(request, response) {
         response.redirect("/mvp2/probation-practitioner/post-release/address-checks")
     } else {
         response.redirect("/mvp2/probation-practitioner/post-release/enter-new-address")
+    }
+})
+
+router.post('/standard-curfew-vary-answer', function(request, response) {
+
+    var standard = request.session.data['standardCurfew']
+    if (standard == "yes"){
+        response.redirect("/mvp2/probation-practitioner/post-release/vary-licence-details")
+    } else {
+        response.redirect("/mvp2/probation-practitioner/post-release/same-each-day")
+    }
+})
+
+
+
+router.post('/same-each-day-vary-answer', function(request, response) {
+
+    var sameDay = request.session.data['sameEachDay']
+    if (sameDay == "yes"){
+        response.redirect("/mvp2/probation-practitioner/post-release/enter-curfew-same")
+    } else {
+        response.redirect("/mvp2/probation-practitioner/post-release/enter-curfew-diff")
+    }
+})
+
+
+
+// MVP2 - Feb 2025 testing - scenario 1
+
+
+router.post('/are-you-sure-answer3', function(request, response) {
+
+    var areyousure = request.session.data['createLicence']
+    if (areyousure == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-1/create/who-with")
+    } else {
+        response.redirect("../../../../_common/not-testing")
+    }
+})
+
+router.post('/standard-curfew-answer2', function(request, response) {
+
+    var standard = request.session.data['standardCurfew']
+    if (standard == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-1/create/additional-conditions")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-1/create/same-each-day")
+    }
+})
+
+router.post('/same-each-day-answer2', function(request, response) {
+
+    var sameDay = request.session.data['sameEachDay']
+    if (sameDay == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-1/create/enter-curfew-same")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-1/create/enter-curfew-diff")
+    }
+})
+
+router.post('/additional-conditions-answer3', function(request, response) {
+
+    var addConditions = request.session.data['additionalConditions']
+    if (addConditions == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-1/create/enter-additional-conditions")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-1/create/bespoke-conditions")
+    }
+})
+
+router.post('/bespoke-conditions-answer3', function(request, response) {
+
+    var bespConditions = request.session.data['bespokeConditions']
+    if (bespConditions == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-1/create/create-bespoke-condition")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-1/create/check-licence")
+    }
+})
+
+router.post('/are-you-sure-edit-answer2', function(request, response) {
+
+    var areyousureEdit = request.session.data['editLicence']
+    if (areyousureEdit == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-1/edit/check-licence-edit")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-1/edit/case-list")
+    }
+})
+
+
+router.post('/same-each-day-edit-answer2', function(request, response) {
+
+    var sameDay = request.session.data['sameEachDay']
+    if (sameDay == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-1/edit/enter-curfew-same")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-1/edit/enter-curfew-diff")
+    }
+})
+
+
+// Scenario 2 
+
+
+router.post('/are-you-sure-vary-answer2', function(request, response) {
+
+    var vary = request.session.data['varyLicence']
+    if (vary == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-2/discuss-spo")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-2/case-list-view")
+    }
+})
+
+
+
+router.post('/standard-curfew-vary-answer2', function(request, response) {
+
+    var standard = request.session.data['standardCurfew']
+    if (standard == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-2/vary-licence-details")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-2/same-each-day")
+    }
+})
+
+
+
+router.post('/same-each-day-vary-answer2', function(request, response) {
+
+    var sameDay = request.session.data['sameEachDay']
+    if (sameDay == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-2/enter-curfew-same")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-2/enter-curfew-diff")
+    }
+})
+
+
+// Scenario 3 
+
+router.post('/are-you-sure-vary-answer3', function(request, response) {
+
+    var vary = request.session.data['varyLicence']
+    if (vary == "yes"){
+        response.redirect("/mvp2/user-research/feb-25/flow-3/discuss-spo")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-3/case-list-view")
+    }
+})
+
+
+router.post('/address-type-answer2', function(request, response) {
+
+    var addType = request.session.data['addressType']
+    if (addType == "res"){
+        response.redirect("/mvp2/user-research/feb-25/flow-3/address-checks")
+    } else {
+        response.redirect("/mvp2/user-research/feb-25/flow-3/enter-new-address")
     }
 })

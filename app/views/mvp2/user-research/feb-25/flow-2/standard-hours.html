@@ -1,6 +1,6 @@
 {% extends "layouts/cvl.html" %}
 
-{% set pageName="Have you consulted with the victim liaison officer (VLO) for this case?" %}
+{% set pageName="Do you want to use the standard HDC curfew hours?" %}
 
 {% set htmlClasses = 'app-width-wide' %}
 
@@ -32,26 +32,29 @@
 
 
 
-    <form action="vary-licence-details" method="get">
+    <form action="/standard-curfew-vary-answer2" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Have you consulted with the victim liaison officer (VLO) for this case?
+                Do you want to use the standard HDC curfew hours?
               </h1>
             </legend>
+            <div id="event-name-hint" class="govuk-hint">
+              The standard HDC curfew hours are 7pm to 7am the next day. 
+            </div>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="consultVLO" name="consultVLO" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="consultVLO">
+                <input class="govuk-radios__input" id="standardCurfew" name="standardCurfew" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="standardCurfew">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="consultVLO-2" name="consultVLO" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="consultVLO-2">
-                  Not applicable
+                <input class="govuk-radios__input" id="standardCurfew-2" name="standardCurfew" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="standardCurfew-2">
+                  No
                 </label>
               </div>
             </div>
@@ -60,7 +63,7 @@
           <button type="submit" class="govuk-button" data-module="govuk-button">
            Continue
           </button>
-        </form>
+          </form>
   </div>
 </div>
 

@@ -1,6 +1,6 @@
 {% extends "layouts/cvl.html" %}
 
-{% set pageName="Have you consulted with the victim liaison officer (VLO) for this case?" %}
+{% set pageName="Do they need additional licence conditions?" %}
 
 {% set htmlClasses = 'app-width-wide' %}
 
@@ -15,7 +15,7 @@
       BETA
     </strong>
     <span class="govuk-phase-banner__text">
-      This is a new service - your <a class="govuk-link govuk-link--no-visited-state" href="../../../../_common/not-testing.html">feedback</a> will help us to improve it.
+      This is a new service - your <a class="govuk-link govuk-link--no-visited-state" href="../../../../../_common/not-testing.html">feedback</a> will help us to improve it.
     </span>
   </p>
 </div>
@@ -32,26 +32,29 @@
 
 
 
-    <form action="vary-licence-details" method="get">
+    <form action="/bespoke-conditions-answer3" method="post">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Have you consulted with the victim liaison officer (VLO) for this case?
+                Do they need bespoke licence conditions?
               </h1>
             </legend>
+            <div id="event-name-hint" class="govuk-hint">
+              You must have Public Protection Casework Section (PPCS) appoval to add a bespoke condition.
+            </div>
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="consultVLO" name="consultVLO" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="consultVLO">
+                <input class="govuk-radios__input" id="bespokeConditions" name="bespokeConditions" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="bespokeConditions">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="consultVLO-2" name="consultVLO" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="consultVLO-2">
-                  Not applicable
+                <input class="govuk-radios__input" id="bespokeConditions-2" name="bespokeConditions" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="bespokeConditions-2">
+                  No
                 </label>
               </div>
             </div>
@@ -60,7 +63,7 @@
           <button type="submit" class="govuk-button" data-module="govuk-button">
            Continue
           </button>
-        </form>
+          </form>
   </div>
 </div>
 

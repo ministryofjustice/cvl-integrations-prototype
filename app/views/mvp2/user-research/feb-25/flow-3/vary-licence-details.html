@@ -132,11 +132,11 @@
               Address
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['curfew-addressLine1'] or "102 Petty France" }},
+              {{ data['curfew-addressLine1'] or "12 Fairmount Drive" }},
               {% if data['curfew-addressLine2'] %}{{ data['curfew-addressLine2'] | default('Fake on Fake') }},{% endif %} 
-              {{ data['curfew-addressTown'] or "London" }}, 
+              {{ data['curfew-addressTown'] or "Chichester" }}, 
               {% if data['curfew-addressCounty'] %}{{ data['curfew-addressCounty'] | default('Fakeshire') }},{% endif %} 
-              {{ data['curfew-addressPostcode'] or "SW1H 9AJ" }}
+              {{ data['curfew-addressPostcode'] or "PO18 8YE" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
@@ -257,13 +257,31 @@
         {% endif %}  
 
 
+
         <div class="govuk-!-margin-bottom-6 govuk-!-margin-top-9">
           <h2 class="govuk-heading-m" style="display: inline;">
-            Additional licence conditions (0)
+            Additional licence conditions (2)
               </h2>
         </div>
 
-        <hr>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Serious organised crime	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Provide your supervising officer with details of any money transfers which you initiate or receive.
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Serious organised crime	
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Provide your supervising officer with the details of the full postal addresses of all premises and storage facilities, including business addresses, to which you have a right of access.
+            </dd>
+          </div>
+          </dl>
 
         <div class="govuk-!-margin-bottom-9 govuk-!-margin-top-6">
           <h2 class="govuk-heading-m" style="display: inline;">

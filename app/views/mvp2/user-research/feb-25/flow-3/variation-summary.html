@@ -31,7 +31,7 @@
   <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-l">
-      Add reasons for the variation
+      Variation summary
         </h1>
 
         <form method="get">
@@ -48,6 +48,17 @@
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
+                    Reasons for this variation
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data['variationReason'] or "Person now has a job" }}
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    By User Name<br>30 Jan 2025
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
                     SPO consultation
                   </dt>
                   <dd class="govuk-summary-list__value">
@@ -58,7 +69,7 @@
                     No
                     {% else %}  
                     Yes
-                    {% endif %}  
+                    {% endif %} 
                   </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -115,57 +126,42 @@
           </div>
 
 
-          <div class="govuk-form-group">
-            <div id="event-name-hint" class="govuk-hint">
-              Add a short explanation for everything you want to vary. You should include: 
-            <ul class="govuk-list govuk-list--bullet" style="color: #505a5f;">
-              <li>why the changes are being made now and why they are necessary to manage current risk</li>
-               <li>who you have consulted about the variations and if they support your decision  </li>
-            </ul>         
-            </div>
-            <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  View variation details
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <div class="govuk-summary-card">
-                  <div class="govuk-summary-card__title-wrapper">
-                    <h2 class="govuk-summary-card__title">
-                      HDC curfew details amended
-                    </h2>
-                  </div>
-                  <div class="govuk-summary-card__content">
-                    <dl class="govuk-summary-list">
-                      <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                          Address
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                          56 Waverley Place, Stole on Spa, SW31 4BK
-                        </dd>
-                      </div>
-                    </dl>
-                  </div>
+
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    HDC curfew details amended
+                  </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Address
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['curfew-addressLine1'] or "12 Fairmount Drive" }},
+                        {% if data['curfew-addressLine2'] %}{{ data['curfew-addressLine2'] | default('Fake on Fake') }},{% endif %} 
+                        {{ data['curfew-addressTown'] or "Chichester" }}, 
+                        {% if data['curfew-addressCounty'] %}{{ data['curfew-addressCounty'] | default('Fakeshire') }},{% endif %} 
+                        {{ data['curfew-addressPostcode'] or "PO18 8YE" }}                        
+                      </dd>
+                    </div>
+                  </dl>
                 </div>
               </div>
-            </details>
-            <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
-          </div>
+
+
 
 
         <div class="govuk-button-group govuk-!-margin-top-8">
-          <a href="variation-summary" type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
+          <a href="confirmation" type="submit" class="govuk-button" data-module="govuk-button">
+            Send for approval
         </a>
         <a href="../../../../_common/not-testing" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Discard changes
         </a>
         </div>
-
-      </form>
-
 
   </div>
 </div>
