@@ -59,7 +59,7 @@
                 <label class="govuk-label govuk-date-input__label" for="monday-start-time-hour">
                     Hour
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="monday-start-time-hour" name="monday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="monday-start-time-hour" name="monday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['monday-start-time-hour'] | int or '7' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -82,7 +82,7 @@
                     <option value="am">
                         am
                     </option>
-                    <option value="pm">
+                    <option value="pm" selected>
                         pm
                     </option>
                 </select>
@@ -105,7 +105,7 @@
             <label class="govuk-label govuk-date-input__label" for="monday-end-time-hour">
                 Hour
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="monday-end-time-hour" name="monday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="monday-end-time-hour" name="monday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['monday-end-time-hour'] | int or '7' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -125,7 +125,7 @@
                 <option value="">
                     -
                 </option>
-                <option value="am">
+                <option value="am" selected>
                     am
                 </option>
                 <option value="pm">
@@ -157,7 +157,7 @@
                 <label class="govuk-label govuk-date-input__label" for="tuesday-start-time-hour">
                     Hour
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="tuesday-start-time-hour" name="tuesday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="tuesday-start-time-hour" name="tuesday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['tuesday-start-time-hour'] | int or '7' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -180,7 +180,7 @@
                     <option value="am">
                         am
                     </option>
-                    <option value="pm">
+                    <option value="pm" selected>
                         pm
                     </option>
                 </select>
@@ -203,7 +203,7 @@
             <label class="govuk-label govuk-date-input__label" for="tuesday-end-time-hour">
                 Hour
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="tuesday-end-time-hour" name="tuesday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="tuesday-end-time-hour" name="tuesday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['tuesday-end-time-hour'] | int or '7' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -223,7 +223,7 @@
                 <option value="">
                     -
                 </option>
-                <option value="am">
+                <option value="am" selected>
                     am
                 </option>
                 <option value="pm">
@@ -255,7 +255,7 @@
                 <label class="govuk-label govuk-date-input__label" for="wednesday-start-time-hour">
                     Hour
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="wednesday-start-time-hour" name="wednesday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="wednesday-start-time-hour" name="wednesday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['wednesday-start-time-hour'] | int or '7' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -278,7 +278,7 @@
                     <option value="am">
                         am
                     </option>
-                    <option value="pm">
+                    <option value="pm" selected>
                         pm
                     </option>
                 </select>
@@ -301,7 +301,7 @@
             <label class="govuk-label govuk-date-input__label" for="wednesday-end-time-hour">
                 Hour
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="wednesday-end-time-hour" name="wednesday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="wednesday-end-time-hour" name="wednesday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['wednesday-end-time-hour'] | int or '7' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -321,7 +321,7 @@
                 <option value="">
                     -
                 </option>
-                <option value="am">
+                <option value="am" selected>
                     am
                 </option>
                 <option value="pm">
@@ -353,7 +353,7 @@
                 <label class="govuk-label govuk-date-input__label" for="thursday-start-time-hour">
                     Hour
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="thursday-start-time-hour" name="thursday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="thursday-start-time-hour" name="thursday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['thursday-start-time-hour'] | int or '7' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -376,7 +376,7 @@
                     <option value="am">
                         am
                     </option>
-                    <option value="pm">
+                    <option value="pm" selected>
                         pm
                     </option>
                 </select>
@@ -399,7 +399,7 @@
             <label class="govuk-label govuk-date-input__label" for="thursday-end-time-hour">
                 Hour
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="thursday-end-time-hour" name="thursday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="thursday-end-time-hour" name="thursday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['thursday-end-time-hour'] | int or '7' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -419,7 +419,7 @@
                 <option value="">
                     -
                 </option>
-                <option value="am">
+                <option value="am" selected>
                     am
                 </option>
                 <option value="pm">
@@ -450,7 +450,7 @@
                 <label class="govuk-label govuk-date-input__label" for="friday-start-time-hour">
                     Hour
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="friday-start-time-hour" name="friday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="friday-start-time-hour" name="friday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['friday-start-time-hour'] | int or '7' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -473,7 +473,7 @@
                     <option value="am">
                         am
                     </option>
-                    <option value="pm">
+                    <option value="pm" selected>
                         pm
                     </option>
                 </select>
@@ -496,7 +496,7 @@
             <label class="govuk-label govuk-date-input__label" for="friday-end-time-hour">
                 Hour
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="friday-end-time-hour" name="friday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="friday-end-time-hour" name="friday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['friday-end-time-hour'] | int or '7' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -516,7 +516,7 @@
                 <option value="">
                     -
                 </option>
-                <option value="am">
+                <option value="am" selected>
                     am
                 </option>
                 <option value="pm">
@@ -548,7 +548,7 @@
                 <label class="govuk-label govuk-date-input__label" for="saturday-start-time-hour">
                     Hour
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="saturday-start-time-hour" name="saturday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="saturday-start-time-hour" name="saturday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['saturday-start-time-hour'] | int or '7' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -571,7 +571,7 @@
                     <option value="am">
                         am
                     </option>
-                    <option value="pm">
+                    <option value="pm" selected>
                         pm
                     </option>
                 </select>
@@ -594,7 +594,7 @@
             <label class="govuk-label govuk-date-input__label" for="saturday-end-time-hour">
                 Hour
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="saturday-end-time-hour" name="saturday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="saturday-end-time-hour" name="saturday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['saturday-end-time-hour'] | int or '7' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -614,7 +614,7 @@
                 <option value="">
                     -
                 </option>
-                <option value="am">
+                <option value="am" selected>
                     am
                 </option>
                 <option value="pm">
@@ -646,7 +646,7 @@
                 <label class="govuk-label govuk-date-input__label" for="sunday-start-time-hour">
                     Hour
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="sunday-start-time-hour" name="sunday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="sunday-start-time-hour" name="sunday-start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['sunday-start-time-hour'] | int or '7' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -669,7 +669,7 @@
                     <option value="am">
                         am
                     </option>
-                    <option value="pm">
+                    <option value="pm" selected>
                         pm
                     </option>
                 </select>
@@ -692,7 +692,7 @@
             <label class="govuk-label govuk-date-input__label" for="sunday-end-time-hour">
                 Hour
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="sunday-end-time-hour" name="sunday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="sunday-end-time-hour" name="sunday-end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['sunday-end-time-hour'] | int or '7' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -712,7 +712,7 @@
                 <option value="">
                     -
                 </option>
-                <option value="am">
+                <option value="am" selected>
                     am
                 </option>
                 <option value="pm">
@@ -725,7 +725,7 @@
   </div>
   </div>
   <!-- End Sunday -->
-
+  
 
 <button type="submit" class="govuk-button" data-module="govuk-button">
   Continue
