@@ -67,7 +67,7 @@
                 <label class="govuk-label govuk-date-input__label" for="monday-start-time-minute">
                     Minute
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="monday-start-time-minute" name="monday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="monday-start-time-minute" name="monday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['monday-start-time-minute'] | int or '00' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -113,7 +113,7 @@
             <label class="govuk-label govuk-date-input__label" for="time-minute">
                 Minute
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="monday-end-time-minute" name="monday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="monday-end-time-minute" name="monday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['monday-end-time-minute'] | int or '00' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -165,7 +165,7 @@
                 <label class="govuk-label govuk-date-input__label" for="tuesday-start-time-minute">
                     Minute
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="tuesday-start-time-minute" name="tuesday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="tuesday-start-time-minute" name="tuesday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['tuesday-start-time-minute'] | int or '00' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -211,7 +211,7 @@
             <label class="govuk-label govuk-date-input__label" for="tuesday-end-time-minute">
                 Minute
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="tuesday-end-time-minute" name="tuesday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="tuesday-end-time-minute" name="tuesday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['tuesday-end-time-minute'] | int or '00' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -263,7 +263,7 @@
                 <label class="govuk-label govuk-date-input__label" for="wednesday-start-time-minute">
                     Minute
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="wednesday-start-time-minute" name="wednesday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="wednesday-start-time-minute" name="wednesday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['wednesday-start-time-minute'] | int or '00' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -309,7 +309,7 @@
             <label class="govuk-label govuk-date-input__label" for="wednesday-end-time-minute">
                 Minute
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="wednesday-end-time-minute" name="wednesday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="wednesday-end-time-minute" name="wednesday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['wednesday-end-time-minute'] | int or '00' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -361,7 +361,7 @@
                 <label class="govuk-label govuk-date-input__label" for="thursday-start-time-minute">
                     Minute
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="thursday-start-time-minute" name="thursday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="thursday-start-time-minute" name="thursday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['thursday-start-time-minute'] | int or '00' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -407,7 +407,7 @@
             <label class="govuk-label govuk-date-input__label" for="thursday-end-time-minute">
                 Minute
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="thursday-end-time-minute" name="thursday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="thursday-end-time-minute" name="thursday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['thursday-end-time-minute'] | int or '00' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -458,7 +458,7 @@
                 <label class="govuk-label govuk-date-input__label" for="friday-start-time-minute">
                     Minute
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="friday-start-time-minute" name="friday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="friday-start-time-minute" name="friday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['friday-start-time-minute'] | int or '00' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -504,7 +504,7 @@
             <label class="govuk-label govuk-date-input__label" for="friday-end-time-minute">
                 Minute
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="friday-end-time-minute" name="friday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="friday-end-time-minute" name="friday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['friday-end-time-minute'] | int or '00' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -556,7 +556,7 @@
                 <label class="govuk-label govuk-date-input__label" for="saturday-start-time-minute">
                     Minute
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="saturday-start-time-minute" name="saturday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="saturday-start-time-minute" name="saturday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['saturday-start-time-minute'] | int or '00' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -602,7 +602,7 @@
             <label class="govuk-label govuk-date-input__label" for="saturday-end-time-minute">
                 Minute
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="saturday-end-time-minute" name="saturday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="saturday-end-time-minute" name="saturday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['saturday-end-time-minute'] | int or '00' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
@@ -654,7 +654,7 @@
                 <label class="govuk-label govuk-date-input__label" for="sunday-start-time-minute">
                     Minute
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="sunday-start-time-minute" name="sunday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="sunday-start-time-minute" name="sunday-start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['sunday-start-time-minute'] | int or '00' }}">
             </div>
         </div>
         <div class="govuk-date-input__item">
@@ -700,7 +700,7 @@
             <label class="govuk-label govuk-date-input__label" for="sunday-end-time-minute">
                 Minute
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="sunday-end-time-minute" name="sunday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="sunday-end-time-minute" name="sunday-end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['sunday-end-time-minute'] | int or '00' }}">
         </div>
     </div>
     <div class="govuk-date-input__item">
