@@ -78,6 +78,47 @@ router.post('/same-each-day-answer', function(request, response) {
 })
 
 
+router.post('/standard-curfew-edit-answer', function(request, response) {
+
+    var standard = request.session.data['standardCurfew']
+    if (standard == "yes"){
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/check-licence")
+    } else {
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/same-each-day-edit")
+    }
+})
+
+router.post('/same-each-day-edit-answer', function(request, response) {
+
+    var sameDay = request.session.data['sameEachDay']
+    if (sameDay == "yes"){
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/enter-curfew-same-edit")
+    } else {
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/enter-curfew-diff-edit")
+    }
+})
+
+router.post('/standard-curfew-edit-2-answer', function(request, response) {
+
+    var standard = request.session.data['standardCurfew']
+    if (standard == "yes"){
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/check-licence-edit")
+    } else {
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/same-each-day-edit-2")
+    }
+})
+
+router.post('/same-each-day-edit-2-answer', function(request, response) {
+
+    var sameDay = request.session.data['sameEachDay']
+    if (sameDay == "yes"){
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/enter-curfew-same-edit-2")
+    } else {
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/enter-curfew-diff-edit-2")
+    }
+})
+
+
 
 // Licence conditions
 
@@ -105,6 +146,18 @@ router.post('/bespoke-conditions-answer2', function(request, response) {
 // Edit routing
 
 
+router.post('/are-you-sure-edit-before-approval-answer', function(request, response) {
+
+    var areyousureEdit = request.session.data['editLicence']
+    if (areyousureEdit == "yes"){
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/check-licence-edit")
+    } else {
+        response.redirect("/mvp2/probation-practitioner/pre-release/create/check-licence-2")
+    }
+})
+
+
+
 router.post('/are-you-sure-edit-answer', function(request, response) {
 
     var areyousureEdit = request.session.data['editLicence']
@@ -125,6 +178,7 @@ router.post('/same-each-day-edit-answer', function(request, response) {
         response.redirect("/mvp2/probation-practitioner/pre-release/edit/enter-curfew-diff")
     }
 })
+
 
 
 // Vary routing
