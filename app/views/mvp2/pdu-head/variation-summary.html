@@ -140,7 +140,11 @@
                         Address
                       </dt>
                       <dd class="govuk-summary-list__value">
-                        56 Waverley Place, Stole on Spa, SW31 4BK
+                        {{ data['curfew-addressLine1'] or "12 Fairmount Drive" }},
+                        {% if data['curfew-addressLine2'] %}{{ data['curfew-addressLine2'] | default('Fake on Fake') }},{% endif %} 
+                        {{ data['curfew-addressTown'] or "Chichester" }}, 
+                        {% if data['curfew-addressCounty'] %}{{ data['curfew-addressCounty'] | default('Fakeshire') }},{% endif %} 
+                        {{ data['curfew-addressPostcode'] or "PO18 8YE" }} 
                       </dd>
                     </div>
                   </dl>
@@ -154,7 +158,7 @@
           <a href="confirmation" type="submit" class="govuk-button" data-module="govuk-button">
             Approve variation
         </a>
-        <a href="../../../../_common/not-testing" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <a href="#" type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Reject or request amendments
         </a>
         </div>

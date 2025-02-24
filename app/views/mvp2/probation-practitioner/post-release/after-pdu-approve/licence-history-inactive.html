@@ -15,7 +15,7 @@
       BETA
     </strong>
     <span class="govuk-phase-banner__text">
-      This is a new service - your <a class="govuk-link govuk-link--no-visited-state" href="../../../_common/not-testing.html">feedback</a> will help us to improve it.
+      This is a new service - your <a class="govuk-link govuk-link--no-visited-state" href="../../../../_common/not-testing.html">feedback</a> will help us to improve it.
     </span>
   </p>
 </div>
@@ -50,14 +50,18 @@
           </ul>
           <div class="govuk-tabs__panel" id="past-day">
             <div class="govuk-button-group">
-              <a href="view-licence">
+              <a href="licence-history-inactive?caseStatus=active">
               <button type="submit" class="govuk-button" data-module="govuk-button">
+                {% if data['caseStatus'] == 'active' %}  
+                View or vary licence
+                {% else %}  
                 Set licence to active
+                {% endif %}  
               </button>
             </a>
-            <a href="case-list-view">
+            <a href="case-list-variation-approved">
               <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Return to caselist
+                Return to case list
               </button>
             </a>
             </div>
@@ -65,37 +69,9 @@
             <div class="moj-timeline">
 
               <div class="moj-timeline__item">
-            
                 <div class="moj-timeline__header">
                   <h2 class="moj-timeline__title">Licence varied</h2>
-            
                   <p class="moj-timeline__byline">by Sally Rooney</p>
-            
-                </div>
-            
-                <p class="moj-timeline__date">
-                  <time datetime="2019-05-28T10:45:00.000Z">13 January 2024 at 02:40 pm</time>
-                </p>
-            
-                <div class="moj-timeline__description">
-
-                  <ul class="moj-timeline__documents">
-                    <li class="moj-timeline__document-item">
-                        <a class="govuk-link--no-visited-state govuk-!-font-size-16" style="padding-left: 25px;" href="../../../_common/not-testing.html">View variation details</a>
-                    </li>
-            
-                </ul>
-                </div>
-            
-              </div>
-
-              <div class="moj-timeline__item">
-            
-                <div class="moj-timeline__header">
-                  <h2 class="moj-timeline__title">Licence created</h2>
-            
-                  <p class="moj-timeline__byline">by Sally Rooney</p>
-            
                 </div>
             
                 <p class="moj-timeline__date">
@@ -103,16 +79,65 @@
                 </p>
             
                 <div class="moj-timeline__description">
-
                   <ul class="moj-timeline__documents">
-                    <li class="moj-timeline__document-item">
-                        <a class="govuk-link--no-visited-state moj-timeline__document-link govuk-!-font-size-16" href="../../../_common/not-testing.html">View or print this version of the licence PDF</a>
+                    {% if data['caseStatus'] == 'active' %}  
+                    <li class="moj-timeline__document-item govuk-!-margin-bottom-3">
+                      <a class="govuk-link--no-visited-state moj-timeline__no-image govuk-!-font-size-16" href="../../../../_common/not-testing.html">View variation details</a>
+                      </li>
+                      <li class="moj-timeline__document-item">
+                        <a class="govuk-link--no-visited-state moj-timeline__document-link govuk-!-font-size-16" href="../../../../../_common/not-testing.html">View or print this version of the licence PDF</a>
                     </li>
-            
+                    {% else %} 
+                    <li class="moj-timeline__document-item">
+                      <a class="govuk-link--no-visited-state moj-timeline__no-image govuk-!-font-size-16" href="../../../../_common/not-testing.html">View variation details</a>
+                      </li> 
+                    {% endif %}  
                 </ul>
                 </div>
-            
               </div>
+
+
+              <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Licence varied</h2>
+                  <p class="moj-timeline__byline">by Sally Rooney</p>
+                </div>
+            
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:45:00.000Z">19 November 2024 at 05:20 pm</time>
+                </p>
+            
+                <div class="moj-timeline__description">
+                  <ul class="moj-timeline__documents">
+                    <li class="moj-timeline__document-item govuk-!-margin-bottom-3">
+                      <a class="govuk-link--no-visited-state moj-timeline__no-image govuk-!-font-size-16" href="../../../../_common/not-testing.html">View variation details</a>
+                  </li>
+                    <li class="moj-timeline__document-item">
+                        <a class="govuk-link--no-visited-state moj-timeline__document-link govuk-!-font-size-16" href="../../../../_common/not-testing.html">View or print this version of the licence PDF</a>
+                    </li>
+                </ul>
+                </div>
+              </div>
+
+              <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Licence created</h2>
+                  <p class="moj-timeline__byline">by Sally Rooney</p>
+                </div>
+            
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:45:00.000Z">19 November 2024 at 05:20 pm</time>
+                </p>
+            
+                <div class="moj-timeline__description">
+                  <ul class="moj-timeline__documents">
+                    <li class="moj-timeline__document-item">
+                        <a class="govuk-link--no-visited-state moj-timeline__document-link govuk-!-font-size-16" href="../../../../_common/not-testing.html">View or print this version of the licence PDF</a>
+                    </li>
+                </ul>
+                </div>
+              </div>
+          
             </div>
           
           </div>

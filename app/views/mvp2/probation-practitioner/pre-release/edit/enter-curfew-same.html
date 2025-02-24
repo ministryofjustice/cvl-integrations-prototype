@@ -44,7 +44,7 @@
       </legend>
 
       <div class="govuk-form-group">
-        <label class="govuk-label bold" for="date">
+        <label class="govuk-label bold" for="start-time">
           Start time
         </label>
     
@@ -53,36 +53,36 @@
         For example, 9:30am or 2:55pm
     </div>
 
-    <div class="govuk-date-input" id="time">
+    <div class="govuk-date-input" id="start-time">
       <div class="govuk-date-input__item">
           <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="time-hour">
+              <label class="govuk-label govuk-date-input__label" for="start-time-hour">
                   Hour
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="time-hour" name="time[hour]" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="start-time-hour" name="start-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['start-time-hour'] | int or '7' }}">
           </div>
       </div>
       <div class="govuk-date-input__item">
           <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="time-minute">
+              <label class="govuk-label govuk-date-input__label" for="start-time-minute">
                   Minute
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="time-minute" name="time[minute]" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="start-time-minute" name="start-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['start-time-minute'] | int or '00' }}">
           </div>
       </div>
       <div class="govuk-date-input__item">
           <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="time-ampm">
+              <label class="govuk-label govuk-date-input__label" for="start-time-ampm">
                   am or pm
               </label>
-              <select class="govuk-select govuk-date-input__input govuk-input--width-2 " id="time-ampm" name="time[ampm]">
+              <select class="govuk-select govuk-date-input__input govuk-input--width-2 " id="start-time-ampm" name="start-time-ampm">
                   <option value="">
                       -
                   </option>
                   <option value="am">
                       am
                   </option>
-                  <option value="pm">
+                  <option value="pm" selected>
                       pm
                   </option>
               </select>
@@ -94,42 +94,42 @@
 
 
   <div class="govuk-form-group">
-    <label class="govuk-label bold" for="date">
+    <label class="govuk-label bold" for="end-time">
       End time
     </label>
 
   
-  <div id="time-hint" class="govuk-hint ">
+  <div id="time-hint" class="govuk-hint">
     For example, 9:30am or 2:55pm
 </div>
 
-<div class="govuk-date-input" id="time">
+<div class="govuk-date-input" id="end-time">
   <div class="govuk-date-input__item">
       <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="time-hour">
+          <label class="govuk-label govuk-date-input__label" for="end-time-hour">
               Hour
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="time-hour" name="time[hour]" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="end-time-hour" name="end-time-hour" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['end-time-hour'] | int or '7' }}">
       </div>
   </div>
   <div class="govuk-date-input__item">
       <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="time-minute">
+          <label class="govuk-label govuk-date-input__label" for="end-time-minute">
               Minute
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="time-minute" name="time[minute]" type="text" pattern="[0-9]*" inputmode="numeric" value="">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2 " maxlength="2" id="end-time-minute" name="end-time-minute" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['end-time-minute'] | int or '00' }}">
       </div>
   </div>
   <div class="govuk-date-input__item">
       <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="time-ampm">
+          <label class="govuk-label govuk-date-input__label" for="end-time-ampm">
               am or pm
           </label>
-          <select class="govuk-select govuk-date-input__input govuk-input--width-2 " id="time-ampm" name="time[ampm]">
+          <select class="govuk-select govuk-date-input__input govuk-input--width-2 " id="end-time-ampm" name="end-time-ampm">
               <option value="">
                   -
               </option>
-              <option value="am">
+              <option value="am" selected>
                   am
               </option>
               <option value="pm">

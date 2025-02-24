@@ -92,9 +92,9 @@ router.post('/same-each-day-edit-answer', function(request, response) {
 
     var sameDay = request.session.data['sameEachDay']
     if (sameDay == "yes"){
-        response.redirect("/mvp2/probation-practitioner/pre-release/create/enter-curfew-same-edit")
+        response.redirect("/mvp2/probation-practitioner/pre-release/edit/enter-curfew-same")
     } else {
-        response.redirect("/mvp2/probation-practitioner/pre-release/create/enter-curfew-diff-edit")
+        response.redirect("/mvp2/probation-practitioner/pre-release/edit/enter-curfew-diff")
     }
 })
 
@@ -168,6 +168,15 @@ router.post('/are-you-sure-edit-answer', function(request, response) {
     }
 })
 
+router.post('/standard-curfew-edit-3-answer', function(request, response) {
+
+    var standard = request.session.data['standardCurfew']
+    if (standard == "yes"){
+        response.redirect("/mvp2/probation-practitioner/pre-release/edit/check-licence-edit")
+    } else {
+        response.redirect("/mvp2/probation-practitioner/pre-release/edit/same-each-day")
+    }
+})
 
 router.post('/same-each-day-edit-answer', function(request, response) {
 
