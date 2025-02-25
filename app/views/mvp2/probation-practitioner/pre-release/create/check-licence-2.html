@@ -127,8 +127,12 @@
               Address
             </dt>
             <dd class="govuk-summary-list__value">
-              102 Petty France, London, SW1H 9AJ
-            </dd>
+              {{ data['curfew-addressLine1'] or "12 Fairmount Drive" }},
+              {% if data['curfew-addressLine2'] %}{{ data['curfew-addressLine2'] | default('Fake on Fake') }},{% endif %} 
+              {{ data['curfew-addressTown'] or "Chichester" }}, 
+              {% if data['curfew-addressCounty'] %}{{ data['curfew-addressCounty'] | default('Fakeshire') }},{% endif %} 
+              {{ data['curfew-addressPostcode'] or "PO18 8YE" }}
+              </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
