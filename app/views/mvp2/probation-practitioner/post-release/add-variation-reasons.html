@@ -92,7 +92,6 @@
                     {% endif %}  
                   </dd>
                 </div>
-                {% endif %}  
                 {% if data['addressType'] == 'res' %}  
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
@@ -109,6 +108,7 @@
                     {% endif %}  
                   </dd>
                 </div>
+                {% endif %}  
                 {% endif %}  
               </dl>
             </div>
@@ -141,8 +141,12 @@
                   <div class="govuk-summary-card__content">
                     <dl class="govuk-summary-list">
                   {% if data['varyAddress'] == 'True' %}  
-                      <div class="govuk-summary-list__row" style="border-bottom: 1px solid #b1b4b6;">
-                        <dt class="govuk-summary-list__key">
+                  {% if data['varyTime'] == 'True' %} 
+                  <div class="govuk-summary-list__row" style="border-bottom: 1px solid #b1b4b6;">
+                  {% else %}  
+                  <div class="govuk-summary-list__row">
+                  {% endif %}  
+                   <dt class="govuk-summary-list__key">
                           Address
                         </dt>
                         <dd class="govuk-summary-list__value">
@@ -174,8 +178,12 @@
                  {% elif data['sameEachDay'] == 'no' %}  
                 </dl>
   
-                  <h3 class="govuk-heading-s govuk-!-margin-bottom-1 govuk-!-margin-top-5">Curfew hours</h3>
-                  <dl class="govuk-summary-list">
+                {% if data['varyAddress'] == 'True' %}  
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-1 govuk-!-margin-top-5">Curfew hours</h3>
+              {% else %}  
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Curfew hours</h3>
+              {% endif %}                    
+              <dl class="govuk-summary-list">
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                         Monday
