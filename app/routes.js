@@ -386,3 +386,76 @@ router.post('/address-type-answer2', function(request, response) {
         response.redirect("/mvp2/user-research/feb-25/flow-3/enter-new-address")
     }
 })
+
+
+
+
+// MVP2 - March 2025 testing
+
+// Flow 1
+
+
+router.post('/are-you-sure-answer4', function(request, response) {
+
+    var areyousure = request.session.data['createLicence']
+    if (areyousure == "yes"){
+        response.redirect("/mvp2/user-research/mar-19/flow-1/create/who-with")
+    } else {
+        response.redirect("../../../../_common/not-testing")
+    }
+})
+
+router.post('/standard-curfew-answer3', function(request, response) {
+
+    var standard = request.session.data['standardCurfew']
+    if (standard == "yes"){
+        response.redirect("/mvp2/user-research/mar-19/flow-1/create/additional-conditions")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-1/create/same-each-day")
+    }
+})
+
+router.post('/same-each-day-answer3', function(request, response) {
+
+    var sameDay = request.session.data['sameEachDay']
+    if (sameDay == "yes"){
+        response.redirect("/mvp2/user-research/mar-19/flow-1/create/enter-curfew-same")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-1/create/enter-curfew-diff")
+    }
+})
+
+// Flow 2
+
+router.post('/are-you-sure-vary-answer4', function(request, response) {
+
+    var vary = request.session.data['varyLicence']
+    if (vary == "yes"){
+        response.redirect("/mvp2/user-research/mar-19/flow-2/discuss-spo")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-2/case-list-view")
+    }
+})
+
+
+router.post('/standard-curfew-vary-answer3', function(request, response) {
+
+    var standard = request.session.data['standardCurfew']
+    if (standard == "yes"){
+        response.redirect("/mvp2/user-research/mar-19/flow-2/vary-licence-details")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-2/same-each-day")
+    }
+})
+
+
+
+router.post('/same-each-day-vary-answer3', function(request, response) {
+
+    var sameDay = request.session.data['sameEachDay']
+    if (sameDay == "yes"){
+        response.redirect("/mvp2/user-research/mar-19/flow-2/enter-curfew-same")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-2/enter-curfew-diff")
+    }
+})

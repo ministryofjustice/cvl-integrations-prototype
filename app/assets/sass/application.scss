@@ -154,6 +154,11 @@
   font-weight: bold;
 }
 
+// Remove bold
+.remove-bold {
+  font-weight: normal;
+}
+
 
 // Curfew hours input 
 
@@ -272,6 +277,15 @@
 }
 
 
+.select-custom-width-am-pm {
+  min-width: 4.5em;
+}
+
+.select-custom-width-day {
+  min-width: 6em;
+}
+
+
 // Exclusion zone image
 
 .exclusion-zone {
@@ -283,3 +297,5 @@
     height: 200px;
     padding: 2px;
 }
+
+
