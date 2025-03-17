@@ -15,7 +15,7 @@
       BETA
     </strong>
     <span class="govuk-phase-banner__text">
-      This is a new service - your <a class="govuk-link govuk-link--no-visited-state" href="../../../_common/not-testing.html">feedback</a> will help us to improve it.
+      This is a new service - your <a class="govuk-link govuk-link--no-visited-state" href="../../../../../../_common/not-testing.html">feedback</a> will help us to improve it.
     </span>
   </p>
 </div>
@@ -78,27 +78,6 @@
                 </ul>
               </dd>
             </div>
-            {% if data['varyAddress'] == 'True' %}  
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Have you completed the licence variation notification (LVEMN) form?
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {% if data['varyForm'] == 'no' %}  
-                No
-                {% else %}  
-                Yes
-                {% endif %}  
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link govuk-link--no-visited-state" href="../../../_common/not-testing.html">Change<span class="govuk-visually-hidden"> if you have consulted with the victim liaison officer (VLO) for this case</span></a>
-                  </li>
-                </ul>
-              </dd>
-            </div>
-            {% endif %}  
             {% if data['addressType'] == 'res' %}  
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -141,7 +120,7 @@
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link govuk-link--no-visited-state" href="lvemn-form?varyAddress=True">Change<span class="govuk-visually-hidden"> address</span></a>
+                  <a class="govuk-link govuk-link--no-visited-state" href="address-type?varyAddress=True">Change<span class="govuk-visually-hidden"> address</span></a>
                 </li>
               </ul>
             </dd>

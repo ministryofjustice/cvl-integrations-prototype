@@ -103,9 +103,16 @@
         <td class="govuk-table__cell" data-sort-value="20250205"><span class="urgent-highlight">5 Feb 2025</span><span class="urgent-highlight urgent-highlight-message">HDC release</span></td>
   
         <td class="govuk-table__cell">
+          {% if data['varyInProgress'] == 'True' %}  
+          <strong class="govuk-tag govuk-tag--blue status-badge">
+            Variation in progress
+           </strong>
+           {% else %}  
           <strong class="govuk-tag govuk-tag--turquoise status-badge">
           Active
         </strong>
+        {% endif %}  
+
         </td>
          </tr>
 

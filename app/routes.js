@@ -459,3 +459,38 @@ router.post('/same-each-day-vary-answer3', function(request, response) {
         response.redirect("/mvp2/user-research/mar-19/flow-2/enter-curfew-diff")
     }
 })
+
+
+// Flow 3
+
+
+router.post('/are-you-sure-vary-answer5', function(request, response) {
+
+    var vary = request.session.data['varyLicence']
+    if (vary == "yes"){
+        response.redirect("/mvp2/user-research/mar-19/flow-3/discuss-spo")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-3/case-list-view")
+    }
+})
+
+router.post('/address-type-answer3', function(request, response) {
+
+    var addType = request.session.data['addressType']
+    if (addType == "res"){
+        response.redirect("/mvp2/user-research/mar-19/flow-3/address-checks")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-3/enter-new-address")
+    }
+})
+
+router.post('/address-checks-answer', function(request, response) {
+
+    var addCheck = request.session.data['addressChecks']
+    if (addCheck == "no"){
+        response.redirect("/mvp2/user-research/mar-19/flow-3/address-checks-end")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-3/enter-new-address")
+    }
+})
+
