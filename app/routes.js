@@ -425,6 +425,27 @@ router.post('/same-each-day-answer3', function(request, response) {
     }
 })
 
+router.post('/additional-conditions-answer4', function(request, response) {
+
+    var addConditions = request.session.data['additionalConditions']
+    if (addConditions == "yes"){
+        response.redirect("/mvp2/user-research/mar-19/flow-1/create/enter-additional-conditions")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-1/create/bespoke-conditions")
+    }
+})
+
+router.post('/bespoke-conditions-answer4', function(request, response) {
+
+    var bespConditions = request.session.data['bespokeConditions']
+    if (bespConditions == "yes"){
+        response.redirect("/mvp2/user-research/mar-19/flow-1/create/create-bespoke-condition")
+    } else {
+        response.redirect("/mvp2/user-research/mar-19/flow-1/create/check-licence")
+    }
+})
+
+
 // Flow 2
 
 router.post('/are-you-sure-vary-answer4', function(request, response) {
