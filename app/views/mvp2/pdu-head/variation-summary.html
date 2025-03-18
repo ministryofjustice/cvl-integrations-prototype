@@ -88,23 +88,6 @@
                     {% endif %}  
                   </dd>
                 </div>
-                {% if data['varyAddress'] == 'True' %}  
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    LVEMN form
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Have you completed the licence variation notification (LVEMN) form?
-                  </dd>
-                  <dd class="govuk-summary-list__actions">
-                    {% if data['varyForm'] == 'no' %}  
-                    No
-                    {% else %}  
-                    Yes
-                    {% endif %}  
-                  </dd>
-                </div>
-                {% endif %}  
                 {% if data['addressType'] == 'res' %}  
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
