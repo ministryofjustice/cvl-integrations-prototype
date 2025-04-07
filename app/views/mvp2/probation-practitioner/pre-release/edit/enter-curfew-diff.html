@@ -1,6 +1,6 @@
 {% extends "layouts/cvl.html" %}
 
-{% set pageName="Enter the curfew hours" %}
+{% set pageName="Tell us what curfew hours need to change" %}
 
 {% set htmlClasses = 'app-width-wide' %}
 
@@ -36,10 +36,16 @@
 
     
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
+                <h1 class="govuk-fieldset__heading">
                     Tell us what curfew hours need to change
                 </h1>
               </legend>
+
+               <div class="govuk-hint govuk-!-margin-bottom-7">
+                HDC curfew hours set the time Cyphoonifer Bransabert must be at the residential or CAS address. This is usually for 9 to 12 hours a day, unless agreed otherwise.
+              </div>     
+
+
         
             <!-- Monday -->
             <h2 class="govuk-heading-m">
@@ -74,7 +80,7 @@
                             am or pm
                         </label>
                         <select class="govuk-select select-custom-width-am-pm" id="monday-start-time-ampm" name="monday-start-time-ampm">
-                            <option value="">-</option>
+                            <option value="choose">Choose am or pm</option>
                             <option value="am">am</option>
                             <option value="pm" selected>pm</option>
                           </select>
@@ -118,7 +124,7 @@
                         am or pm
                     </label>
                     <select class="govuk-select select-custom-width-am-pm" id="monday-end-time-ampm" name="monday-end-time-ampm">
-                        <option value="">-</option>
+                        <option value="choose">Choose am or pm</option>
                         <option value="am" selected>am</option>
                         <option value="pm">pm</option>
                       </select>
@@ -130,7 +136,7 @@
                         Day
                     </label>
                     <select class="govuk-select select-custom-width-day" id="monday-end-time-day" name="monday-end-time-day">
-                        <option value="">-</option>
+                        <option value="chooseDay">Choose a day</option>
                         <option value="Monday">on Monday</option>
                         <option value="Tuesday" selected>on Tuesday</option>
                       </select>
@@ -178,8 +184,8 @@
                              am or pm
                          </label>
                          <select class="govuk-select select-custom-width-am-pm" id="tuesday-start-time-ampm" name="tuesday-start-time-ampm">
-                             <option value="">-</option>
-                             <option value="am">am</option>
+                            <option value="choose">Choose am or pm</option>
+                            <option value="am">am</option>
                              <option value="pm" selected>pm</option>
                          </select>
                      </div>
@@ -221,8 +227,8 @@
                              am or pm
                          </label>
                          <select class="govuk-select select-custom-width-am-pm" id="tuesday-end-time-ampm" name="tuesday-end-time-ampm">
-                             <option value="">-</option>
-                             <option value="am" selected>am</option>
+                            <option value="choose">Choose am or pm</option>
+                            <option value="am" selected>am</option>
                              <option value="pm">pm</option>
                          </select>
                      </div>
@@ -234,7 +240,7 @@
                             Day
                         </label>
                         <select class="govuk-select select-custom-width-day" id="tuesday-end-time-day" name="tuesday-end-time-day">
-                            <option value="">-</option>
+                            <option value="chooseDay">Choose a day</option>
                             <option value="Tuesday">on Tuesday</option>
                             <option value="Wednesday" selected>on Wednesday</option>
                           </select>
@@ -282,8 +288,8 @@
                          am or pm
                      </label>
                      <select class="govuk-select select-custom-width-am-pm" id="wednesday-start-time-ampm" name="wednesday-start-time-ampm">
-                         <option value="">-</option>
-                         <option value="am">am</option>
+                        <option value="choose">Choose am or pm</option>
+                        <option value="am">am</option>
                          <option value="pm" selected>pm</option>
                      </select>
                  </div>
@@ -325,8 +331,8 @@
                          am or pm
                      </label>
                      <select class="govuk-select select-custom-width-am-pm" id="wednesday-end-time-ampm" name="wednesday-end-time-ampm">
-                         <option value="">-</option>
-                         <option value="am" selected>am</option>
+                        <option value="choose">Choose am or pm</option>
+                        <option value="am" selected>am</option>
                          <option value="pm">pm</option>
                      </select>
                  </div>
@@ -337,7 +343,7 @@
                         Day
                     </label>
                     <select class="govuk-select select-custom-width-day" id="wednesday-end-time-day" name="wednesday-end-time-day">
-                        <option value="">-</option>
+                        <option value="chooseDay">Choose a day</option>
                         <option value="Wednesday">on Wednesday</option>
                         <option value="Thursday" selected>on Thursday</option>
                       </select>
@@ -384,8 +390,8 @@
                          am or pm
                      </label>
                      <select class="govuk-select select-custom-width-am-pm" id="thursday-start-time-ampm" name="thursday-start-time-ampm">
-                         <option value="">-</option>
-                         <option value="am">am</option>
+                        <option value="choose">Choose am or pm</option>
+                        <option value="am">am</option>
                          <option value="pm" selected>pm</option>
                      </select>
                  </div>
@@ -427,8 +433,8 @@
                          am or pm
                      </label>
                      <select class="govuk-select select-custom-width-am-pm" id="thursday-end-time-ampm" name="thursday-end-time-ampm">
-                         <option value="">-</option>
-                         <option value="am" selected>am</option>
+                        <option value="choose">Choose am or pm</option>
+                        <option value="am" selected>am</option>
                          <option value="pm">pm</option>
                      </select>
                  </div>
@@ -439,7 +445,7 @@
                         Day
                     </label>
                     <select class="govuk-select select-custom-width-day" id="thursday-end-time-day" name="thursday-end-time-day">
-                        <option value="">-</option>
+                        <option value="chooseDay">Choose a day</option>
                         <option value="Thursday">on Thursday</option>
                         <option value="Friday" selected>on Friday</option>
                       </select>
@@ -486,7 +492,7 @@
                              am or pm
                          </label>
                          <select class="govuk-select select-custom-width-am-pm" id="friday-start-time-ampm" name="friday-start-time-ampm">
-                             <option value="">-</option>
+                            <option value="choose">Choose am or pm</option>
                              <option value="am">am</option>
                              <option value="pm" selected>pm</option>
                          </select>
@@ -529,7 +535,7 @@
                              am or pm
                          </label>
                          <select class="govuk-select select-custom-width-am-pm" id="friday-end-time-ampm" name="friday-end-time-ampm">
-                             <option value="">-</option>
+                            <option value="choose">Choose am or pm</option>
                              <option value="am" selected>am</option>
                              <option value="pm">pm</option>
                          </select>
@@ -541,7 +547,7 @@
                             Day
                         </label>
                         <select class="govuk-select select-custom-width-day" id="friday-end-time-day" name="friday-end-time-day">
-                            <option value="">-</option>
+                            <option value="chooseDay">Choose a day</option>
                             <option value="Friday">on Friday</option>
                             <option value="Saturday" selected>on Saturday</option>
                           </select>
@@ -590,7 +596,7 @@
                              am or pm
                          </label>
                          <select class="govuk-select select-custom-width-am-pm" id="saturday-start-time-ampm" name="saturday-start-time-ampm">
-                             <option value="">-</option>
+                            <option value="choose">Choose am or pm</option>
                              <option value="am">am</option>
                              <option value="pm" selected>pm</option>
                          </select>
@@ -633,7 +639,7 @@
                              am or pm
                          </label>
                          <select class="govuk-select select-custom-width-am-pm" id="saturday-end-time-ampm" name="saturday-end-time-ampm">
-                             <option value="">-</option>
+                            <option value="choose">Choose am or pm</option>
                              <option value="am" selected>am</option>
                              <option value="pm">pm</option>
                          </select>
@@ -645,7 +651,7 @@
                             Day
                         </label>
                         <select class="govuk-select select-custom-width-day" id="saturday-end-time-day" name="saturday-end-time-day">
-                            <option value="">-</option>
+                            <option value="chooseDay">Choose a day</option>
                             <option value="Saturday">on Saturday</option>
                             <option value="Sunday" selected>on Sunday</option>
                           </select>
@@ -694,7 +700,7 @@
                              am or pm
                          </label>
                          <select class="govuk-select select-custom-width-am-pm" id="sunday-start-time-ampm" name="sunday-start-time-ampm">
-                             <option value="">-</option>
+                            <option value="choose">Choose am or pm</option>
                              <option value="am">am</option>
                              <option value="pm" selected>pm</option>
                          </select>
@@ -737,7 +743,7 @@
                              am or pm
                          </label>
                          <select class="govuk-select select-custom-width-am-pm" id="sunday-end-time-ampm" name="sunday-end-time-ampm">
-                             <option value="">-</option>
+                            <option value="choose">Choose am or pm</option>
                              <option value="am" selected>am</option>
                              <option value="pm">pm</option>
                          </select>
@@ -749,7 +755,7 @@
                             Day
                         </label>
                         <select class="govuk-select select-custom-width-day" id="sunday-end-time-day" name="sunday-end-time-day">
-                            <option value="">-</option>
+                            <option value="chooseDay">Choose a day</option>
                             <option value="Sunday">on Sunday</option>
                             <option value="Monday" selected>on Monday</option>
                           </select>
@@ -759,11 +765,45 @@
              </div>
              
         
+
+
+             <div class="govuk-!-width-two-thirds govuk-!-margin-bottom-8 govuk-!-margin-top-6">
+                <hr class="curfew-hr">
+              </div>
+             
+        
           <!-- End Sunday -->
 
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
-           </button>
+
+
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Help with this licence condition</h2>
+
+          <details class="govuk-details govuk-!-margin-bottom-1">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                If curfews are longer than 12 hours
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              You must use a bespoke licence condition approved by PPCS if: <ul class="govuk-list--bullet"><li>the total length of someone's curfews is more than 12 hours</li><li>they need more than 3 curfews</li></ul>
+            </div>
+          </details>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                If you are also adding reporting instructions
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              Add an hour to the total length of someone's curfews each time you ask them to report to a police station or approved premises in an additional licence condition.<br><br>If this total is more than 12 hours, you must use a bespoke condition approved by PPCS.<br><br>For example, if someone had an 11-hour curfew and had to report to a police station twice a day, the total length of their curfews would be 13 hours. This would need PPCS approval.
+            </div>
+          </details>
+
+
+<button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+  Continue
+ </button>
     </fieldset>
           </form>
   </div>

@@ -237,6 +237,26 @@ router.post('/same-each-day-vary-answer', function(request, response) {
 })
 
 
+router.post('/address-checks-answer-2', function(request, response) {
+
+    var addCheck2 = request.session.data['addressChecks']
+    if (addCheck2 == "no"){
+        response.redirect("/mvp2/probation-practitioner/post-release/interrupt-card")
+    } else {
+        response.redirect("/mvp2/probation-practitioner/post-release/enter-new-address")
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
 
 // MVP2 - Feb 2025 testing
 
