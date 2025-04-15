@@ -354,6 +354,85 @@
             
             '
           }
+        },
+
+        {
+          heading: {
+            text: "Errors"
+          },
+          content: {
+            html: '
+            <h2 class="govuk-heading-m">
+              Validation errors
+            </h2>
+
+            <h3 class="govuk-heading-s">
+              Curfew hours routing pages 
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/standard-hours">Do you want to use the standard HDC curfew hours?</a>
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/same-apply-everyday">Do the same curfew hours apply everyday?</a>
+              </li>
+            </ul>
+            
+
+            <h3 class="govuk-heading-s">
+              Enter the curfew hours
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/same-each-day/3-errors">3 errors present example (user tries to continue without entering anything in start time or end time)</a>
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/same-each-day/2-errors">2 errors present example (user tries to continue, but the start time hours and minutes are empty. Am/pm is selected)</a>
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/same-each-day/1-error">1 error present example (user tries to continue, but the start time hour is invalid. Minutes is present and valid and am/pm is selected)</a>
+              </li>
+            </ul>
+
+
+            <h3 class="govuk-heading-s">
+              Tell us what curfew hours need to change
+            </h3>
+            
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/diff-day/3-errors">3 errors present for start time and 4 errors present for end time example (user tries to continue without entering anything in Monday start time and invalid/empty data in Tuesday end time)</a>
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/diff-day/2-errors">2 errors present example (user tries to continue, but the Wednesday end time hours are empty and no day is selected. Minutes is present and valid and am/pm is selected)</a>
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/diff-day/1-error">1 error present example (user tries to continue, but the Friday end time minute is invalid. All other Friday end time fields are valid/selected)</a>
+              </li>
+            </ul>
+
+
+            <h3 class="govuk-heading-s">
+              Vary address questions
+            </h3>
+
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/address-type">What type of accommodation is the new curfew address?</a>
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/address-checks">Have you completed the residential address checks?</a>
+              </li>
+              <li>
+                <a class="govuk-link--no-visited-state" href="/mvp2/errors/validation/enter-new-address">Enter the new curfew address</a>
+              </li>
+            </ul>
+
+            
+            '
+          }
         }
 
       ]
