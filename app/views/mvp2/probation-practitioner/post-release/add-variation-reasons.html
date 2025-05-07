@@ -102,10 +102,15 @@
 
           <div class="govuk-form-group">
             <div id="event-name-hint" class="govuk-hint">
-              Add a short explanation for everything you want to vary. You should include: 
+              Add a short explanation for everything you want to vary. Include: 
             <ul class="govuk-list govuk-list--bullet" style="color: #505a5f;">
-              <li>why the changes are being made now and why they are necessary to manage current risk</li>
-               <li>who you have consulted about the variations and if they support your decision  </li>
+              <li>why the changes are being made now and why they're necessary to manage risk</li>
+               <li>who you have consulted about the variations and if they support your decision</li>
+               {% if data['addressType'] == 'res' %}  
+               {% if data['addressChecks'] == 'no' %}  
+               <li>why you have not completed the residential address checks</li>
+               {% endif %}  
+               {% endif %}  
             </ul>         
             </div>
             <details class="govuk-details">
