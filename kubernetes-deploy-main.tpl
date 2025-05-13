@@ -54,9 +54,9 @@ spec:
   ingressClassName: default
   tls:
   - hosts:
-    - ${KUBE_NAMESPACE}-${BRANCH}.apps.live.cloud-platform.service.justice.gov.uk
+    - ${cvl-integrations-prototype}-${BRANCH}.apps.live.cloud-platform.service.justice.gov.uk
   rules:
-  - host: ${KUBE_NAMESPACE}-${BRANCH}.apps.live.cloud-platform.service.justice.gov.uk
+  - host: ${cvl-integrations-prototype}-${BRANCH}.apps.live.cloud-platform.service.justice.gov.uk
     http:
       paths:
       - path: /
